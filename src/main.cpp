@@ -40,6 +40,8 @@
 //#include "writer/ConsoleWriter.h"
 #include "writer/VtkWriter.h"
 #include "tools/args.h"
+#include "tools/logger.cpp"
+#include "WavePropagation.cpp"
 
 #include <cstring>
 
