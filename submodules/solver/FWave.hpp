@@ -2,6 +2,7 @@
 #include <iostream>
 #include <assert.h>
 #include <cstdlib>
+#include <cmath>
 
 using namespace std;
 
@@ -52,7 +53,6 @@ public:
 	void computeNetUpdates(T i_h_l, T i_h_r, T i_hu_l, T i_hu_r, T i_b_l, T i_b_r,
 			T& o_lamda_l, T& o_lamda_r, T& o_Q_l, T& o_Q_r, T& o_max_ws)
 	{
-	o_max_ws = 1;
 	h_l = i_h_l;
 	h_r = i_h_r;
 	hu_l = i_hu_l;
@@ -88,6 +88,8 @@ public:
 		o_lamda_l = eigen_coeff1 + eigen_coeff2;
 		o_lamda_r = 0.0;
 		}
+	cout << o_lamda_l/o_Q_l << "  " << o_lamda_r/o_Q_l << '\n';
+	o_max_ws = max(abs(o_lamda_l), abs(o_lamda_r));
 	}
 
 };

@@ -37,7 +37,7 @@
 #include "types.h"
 #include "WavePropagation.h"
 #include "scenarios/dambreak.h"
-//#include "writer/ConsoleWriter.h"
+#include "writer/ConsoleWriter.h"
 #include "writer/VtkWriter.h"
 #include "tools/args.h"
 #include "tools/logger.cpp"
@@ -64,9 +64,10 @@ int main(int argc, char** argv)
 		h[i] = scenario.getHeight(i);
 	memset(hu, 0, sizeof(T)*(args.size()+2));
 
-	// Create a writer that is responsible printing out values
-	//writer::ConsoleWriter writer;
-	writer::VtkWriter writer("swe1d", scenario.getCellSize());
+	// Create a writer that is responsible printing out values	
+	writer::ConsoleWriter writer;
+	
+	//writer::VtkWriter writer("swe1d", scenario.getCellSize());
 
 	// Helper class computing the wave propagation
 	WavePropagation wavePropagation(h, hu, args.size(), scenario.getCellSize());
@@ -98,6 +99,7 @@ int main(int argc, char** argv)
 
 		// Write new values
 		writer.write(t, h, hu, args.size());
+		
 	}
 
 	// Free allocated memory
