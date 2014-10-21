@@ -14,7 +14,7 @@ private:
 	update_r, update_l,
 	lamda_roe1, lamda_roe2, 
 	delta_f1, delta_f2,
-	h_l, hu_l, h_r, hu_r, gravity;
+	h_l, hu_l, h_r, hu_r, gravity, lamda_inv;
 
 
 
@@ -22,7 +22,7 @@ private:
 	void _delta_flux()
 	{
 	delta_f1 = hu_r - hu_l;
-	delta_f2 = hu_r * hu_r + h_r * h_r * gravity * 0.5 - hu_l * hu_l + h_l * h_l * gravity * 0.5;
+	delta_f2 = (hu_r * hu_r / h_r + h_r * h_r * gravity * 0.5) - (hu_l * hu_l / h_r + h_l * h_l * gravity * 0.5);
 	}
 
 	//(3)
@@ -40,8 +40,9 @@ private:
 	//(8)
 	void _eigencoeff()
 	{
-	eigen_coeff1 = lamda_roe1 * delta_f1 - delta_f2;
-	eigen_coeff2 = delta_f2 - lamda_roe2 * delta_f1;
+	lamda_inv = 1.0 / (lamda_roe2 - lamda_roe1);
+	eigen_coeff1 = lamda_inv * (lamda_roe2 * delta_f1 - delta_f2);
+	eigen_coeff2 = lamda_inv * (delta_f2 - lamda_roe1 * delta_f1);
 	}
 
 public:
@@ -88,7 +89,7 @@ public:
 		o_lamda_l = eigen_coeff1 + eigen_coeff2;
 		o_lamda_r = 0.0;
 		}
-	cout << o_lamda_l/o_Q_l << "  " << o_lamda_r/o_Q_l << '\n';
+	//cout << o_lamda_l/o_Q_l << "  " << o_lamda_r/o_Q_l << '\n';
 	o_max_ws = max(abs(o_lamda_l), abs(o_lamda_r));
 	}
 
