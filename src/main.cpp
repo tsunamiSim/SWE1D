@@ -37,6 +37,7 @@
 #include "types.h"
 #include "WavePropagation.h"
 #include "scenarios/dambreak.h"
+#include "scenarios/schock.h"
 #include "writer/ConsoleWriter.h"
 #include "writer/VtkWriter.h"
 #include "tools/args.h"
@@ -45,6 +46,7 @@
 
 #include <cstring>
 
+
 int main(int argc, char** argv)
 {
 	// Parse command line parameters
@@ -52,6 +54,8 @@ int main(int argc, char** argv)
 
 	// Scenario
 	scenarios::DamBreak scenario(args.size());
+	//scenarios::Schock scenario(args.size());
+	//scenarios::Rare scenario(args.size());
 
 	// Allocate memory
 	// Water height
@@ -65,9 +69,10 @@ int main(int argc, char** argv)
 	memset(hu, 0, sizeof(T)*(args.size()+2));
 
 	// Create a writer that is responsible printing out values	
-	writer::ConsoleWriter writer;
 	
-	//writer::VtkWriter writer("swe1d", scenario.getCellSize());
+	//writer::ConsoleWriter writer;
+	
+	writer::VtkWriter writer("swe1d", scenario.getCellSize());
 
 	// Helper class computing the wave propagation
 	WavePropagation wavePropagation(h, hu, args.size(), scenario.getCellSize());
