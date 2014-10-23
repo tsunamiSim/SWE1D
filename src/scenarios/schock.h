@@ -1,28 +1,25 @@
-#ifndef SCENARIOS_SCHOK_H_
-#define SCENARIOS_SCHOCK_H_
+#ifndef SCENARIOS_SHOK_H_
+#define SCENARIOS_SHOCK_H_
 
 #include "./../types.h"
 
 namespace scenarios
 {
 
-class Schock
+class Shock : public scenarioBase
 {
-private:
-	const unsigned int m_size;
-
 public:
-	Schock(unsigned int size)
-		: m_size(size)
+	Shock(unsigned int size)
+		: scenarioBase(size)
 	{
 	}
 
 	unsigned int getHeight(unsigned int pos)
 	{
-		if (pos <= 3*m_size/7)
+		if (pos <= m_size/2 - 2)
 			return 15;
-		if (pos >= 4*m_size/7)
-			return 15;
+		if (pos >= m_size/2 + 2)
+			return 14;
 		return 10;
 	}
 

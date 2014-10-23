@@ -44,6 +44,10 @@
 #include <iostream>
 #include <sstream>
 
+#include "./../scenarios/dambreak.h"
+#include "./../scenarios/schock.h"
+#include "./../scenarios/rare.h"
+
 namespace tools
 {
 
@@ -57,6 +61,8 @@ private:
 	unsigned int m_size;
 	/** Number of time steps we want to simulate */
 	unsigned int m_timeSteps;
+	/** Scenario we want to simulate */
+	scenarios::scenarioBase *m_scenario;
 
 public:
 	Args(int argc, char** argv)
@@ -67,6 +73,7 @@ public:
 			{"size", required_argument, 0, 's'},
 			{"time", required_argument, 0, 't'},
 			{"help", no_argument, 0, 'h'},
+			{"scenario", required_argument, 0, 'z'},
 			{0, 0, 0, 0}
 		};
 
@@ -89,6 +96,13 @@ public:
 				ss.str(optarg);
 				ss >> m_timeSteps;
 				std::cout << m_timeSteps << std::endl;
+				break;
+			case 'z':
+				ss.clear();
+				ss.str(optarg);
+				unsigned int tmp;
+				ss >> tmp;
+				setScenario(tmp);
 				break;
 			case 'h':
 				printHelpMessage();
@@ -115,20 +129,49 @@ public:
 		return m_timeSteps;
 	}
 
+	scenarios::scenarioBase scenario()
+	{
+		if(!m_scenario)
+			m_scenario = new scenarios::DamBreak(m_size);
+		return *m_scenario;
+	} 
+	
+	~Args()
+	{
+		//delete m_scenario;
+	}	
+	
 private:
 	/**
 	 * Prints the help message, showing all available options
 	 *
 	 * @param out The output stream the should be used for
 	 *  printing
-	 */
+	 */	
 	void printHelpMessage(std::ostream &out = std::cout)
 	{
 		out << "Usage: SWE1D [OPTIONS...]" << std::endl
 			<< "  -s, --size=SIZE              domain size" << std::endl
 			<< "  -t, --time=TIME              number of simulated time steps" << std::endl
-			<< "  -h, --help                   this help message" << std::endl;
+			<< "  -h, --help                   this help message" << std::endl
+			<< "  -z, --scenario=INDEX         index of simulated scenario (0: DamBreak (set by default, 1: Shock, 2: RareRare" 				<< std::endl;
 	}
+
+	void setScenario(unsigned int scenario)
+	{
+		switch(scenario){
+		case 1:
+			m_scenario = new scenarios::Shock(m_size);
+			break;
+		case 2:
+			m_scenario = new scenarios::Rare(m_size);
+			break;
+		default:
+			m_scenario = new scenarios::DamBreak(m_size);
+			break;
+	 	}
+	}
+
 };
 
 } /* namespace tools */

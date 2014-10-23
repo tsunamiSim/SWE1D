@@ -36,9 +36,6 @@
 
 #include "types.h"
 #include "WavePropagation.h"
-#include "scenarios/dambreak.h"
-#include "scenarios/schock.h"
-#include "scenarios/rare.h"
 #include "writer/ConsoleWriter.h"
 #include "writer/VtkWriter.h"
 #include "tools/args.h"
@@ -51,11 +48,6 @@ int main(int argc, char** argv)
 	// Parse command line parameters
 	tools::Args args(argc, argv);
 
-	// Scenario
-	//scenarios::DamBreak scenario(args.size());
-	//scenarios::Schock scenario(args.size());
-	scenarios::Rare scenario(args.size());
-
 	// Allocate memory
 	// Water height
 	T *h = new T[args.size()+2];
@@ -64,17 +56,19 @@ int main(int argc, char** argv)
 
 	// Initialize water height and momentum
 	for (unsigned int i = 0; i < args.size()+2; i++)
-		h[i] = scenario.getHeight(i);
-	memset(hu, 0, sizeof(T)*(args.size()+2));
+		{
+		h[i] = args.scenario().getHeight(i);
+		hu[i] = args.scenario().getMomentum(i);
+		}
 
 	// Create a writer that is responsible printing out values	
 	
 	//writer::ConsoleWriter writer;
 	
-	writer::VtkWriter writer("swe1d", scenario.getCellSize());
+	writer::VtkWriter writer("swe1d", args.scenario().getCellSize());
 
 	// Helper class computing the wave propagation
-	WavePropagation wavePropagation(h, hu, args.size(), scenario.getCellSize());
+	WavePropagation wavePropagation(h, hu, args.size(), args.scenario().getCellSize());
 
 	// Write initial data
 	tools::Logger::logger.info("Initial data");

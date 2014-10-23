@@ -77,5 +77,5 @@ Import('env')
 # Build the program
 env.Program(os.path.join(buildDir, programName), env.srcFiles)
 
-#Build cxxtests
+# Build cxxtests
 env.CxxTest('#build/CxxTests/FWaveTest', source='#CxxTests/FWave_testsuite.t.h')
