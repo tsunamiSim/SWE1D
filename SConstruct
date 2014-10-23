@@ -52,7 +52,7 @@ print ''
 import os
 
 # Scons environement
-env = Environment()
+env = Environment(tools = ['default', 'cxxtest'])
 
 # eclipse specific flag
 env.Append(CCFLAGS=['-fmessage-length=0'])
@@ -76,3 +76,6 @@ Import('env')
 
 # Build the program
 env.Program(os.path.join(buildDir, programName), env.srcFiles)
+
+#Build cxxtests
+env.CxxTest('#build/CxxTests/FWaveTest', source='#CxxTests/FWave_testsuite.t.h')
