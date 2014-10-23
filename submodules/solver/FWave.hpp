@@ -118,13 +118,6 @@ public:
 		}
 	//cout << o_lamda_l/o_Q_l << "  " << o_lamda_r/o_Q_l << '\n';
 	o_max_ws = max(abs(o_lamda_l), abs(o_lamda_r));
-
-	// assert all output values are set
-	assert(o_lamda_l);
-	assert(o_lamda_r);
-	assert(o_Q_l);
-	assert(o_Q_r);
-	assert(o_max_ws);
 	}
 
 };
