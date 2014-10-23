@@ -46,10 +46,13 @@ namespace scenarios
 class DamBreak : public scenarioBase
 {
 private:
-	/** Number of cells */
-	//const unsigned int m_size;
 
 public:
+	/**
+	* Constructor for the scenario
+	*
+	* @param size The amount of cells which are simulated
+	*/
 	DamBreak(unsigned int size)
 		: scenarioBase(size)
 	{

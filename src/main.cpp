@@ -54,8 +54,6 @@ int main(int argc, char** argv)
 	// Momentum
 	T *hu = new T[args.size()+2];
 
-//	scenarios::scenarioBase *scenario = 
-
 	// Initialize water height and momentum
 	for (unsigned int i = 0; i < args.size()+2; i++)
 		{
@@ -66,8 +64,7 @@ int main(int argc, char** argv)
 
 	// Create a writer that is responsible printing out values	
 	
-	//writer::ConsoleWriter writer;
-	
+//	writer::ConsoleWriter writer;	
 	writer::VtkWriter writer("results/swe1d", args.scenario()->getCellSize());
 
 	// Helper class computing the wave propagation
