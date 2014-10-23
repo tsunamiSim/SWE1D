@@ -38,19 +38,20 @@
 #define SCENARIOS_DAMBREAK_H_
 
 #include "./../types.h"
+#include "scenario.h"
 
 namespace scenarios
 {
 
-class DamBreak
+class DamBreak : public scenarioBase
 {
 private:
 	/** Number of cells */
-	const unsigned int m_size;
+	//const unsigned int m_size;
 
 public:
 	DamBreak(unsigned int size)
-		: m_size(size)
+		: scenarioBase(size)
 	{
 	}
 
