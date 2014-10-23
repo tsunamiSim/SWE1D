@@ -181,7 +181,7 @@ private:
 	std::string generateFileName()
 	{
 		std::ostringstream name;
-		name << m_basename << '_' << m_timeStep << ".vtr";
+		name << "results/" << m_basename << '_' << m_timeStep << ".vtr";
 
 		return name.str();
 	}
