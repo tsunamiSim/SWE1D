@@ -77,6 +77,8 @@ public:
 			T& o_lamda_l, T& o_lamda_r, T& o_Q_l, T& o_Q_r, T& o_max_ws)
 	{
 	
+	// cout << i_h_l << i_h_r << i_hu_l << i_hu_r << i_b_l << i_b_r << endl;	
+	
 	// assert that height is not zero since when calculating the particle speed there is a division through it
 	assert(i_h_l != 0);
 	assert(i_h_r != 0);
@@ -116,7 +118,7 @@ public:
 		o_lamda_l = eigen_coeff1 + eigen_coeff2;
 		o_lamda_r = 0.0;
 		}
-	//cout << o_lamda_l/o_Q_l << "  " << o_lamda_r/o_Q_l << '\n';
+	//cout << o_lamda_l << o_Q_l << "  " << o_lamda_r << o_Q_l << '\n';
 	o_max_ws = max(abs(o_lamda_l), abs(o_lamda_r));
 	}
 

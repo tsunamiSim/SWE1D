@@ -54,21 +54,24 @@ int main(int argc, char** argv)
 	// Momentum
 	T *hu = new T[args.size()+2];
 
+//	scenarios::scenarioBase *scenario = 
+
 	// Initialize water height and momentum
 	for (unsigned int i = 0; i < args.size()+2; i++)
 		{
-		h[i] = args.scenario().getHeight(i);
-		hu[i] = args.scenario().getMomentum(i);
+		h[i] = args.scenario()->getHeight(i);
+		
+		hu[i] = args.scenario()->getMomentum(i);
 		}
 
 	// Create a writer that is responsible printing out values	
 	
 	//writer::ConsoleWriter writer;
 	
-	writer::VtkWriter writer("swe1d", args.scenario().getCellSize());
+	writer::VtkWriter writer("results/swe1d", args.scenario()->getCellSize());
 
 	// Helper class computing the wave propagation
-	WavePropagation wavePropagation(h, hu, args.size(), args.scenario().getCellSize());
+	WavePropagation wavePropagation(h, hu, args.size(), args.scenario()->getCellSize());
 
 	// Write initial data
 	tools::Logger::logger.info("Initial data");
@@ -99,6 +102,7 @@ int main(int argc, char** argv)
 		writer.write(t, h, hu, args.size());
 		
 	}
+	
 
 	// Free allocated memory
 	delete [] h;

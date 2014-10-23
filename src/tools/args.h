@@ -67,7 +67,8 @@ private:
 public:
 	Args(int argc, char** argv)
 		: m_size(100),
-		  m_timeSteps(20.0)
+		  m_timeSteps(20.0),
+		  m_scenario(0)
 	{
 		const struct option longOptions[] = {
 			{"size", required_argument, 0, 's'},
@@ -79,7 +80,7 @@ public:
 
 		int c, optionIndex;
 		std::istringstream ss;
-		while ((c = getopt_long(argc, argv, "s:t:h",
+		while ((c = getopt_long(argc, argv, "s:t:h:z",
 			longOptions, &optionIndex)) >= 0) {
 			switch (c) {
 			case 0:
@@ -129,17 +130,25 @@ public:
 		return m_timeSteps;
 	}
 
-	scenarios::scenarioBase scenario()
+	scenarios::scenarioBase* scenario()
 	{
 		if(!m_scenario)
+		{
 			m_scenario = new scenarios::DamBreak(m_size);
-		return *m_scenario;
+		}
+		
+		return m_scenario;
+	} 
+
+	int getHeight(unsigned int i)
+	{
+		return m_scenario->getHeight(i);
 	} 
 	
-	~Args()
-	{
+	//~Args()
+	//{
 		//delete m_scenario;
-	}	
+	//}	
 	
 private:
 	/**
@@ -170,6 +179,7 @@ private:
 			m_scenario = new scenarios::DamBreak(m_size);
 			break;
 	 	}
+		std::cout << "setScenario" << std::endl;
 	}
 
 };

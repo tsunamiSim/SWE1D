@@ -2,6 +2,7 @@
 #define SCENARIOBASE_H_
 
 #include "./../types.h"
+#include <iostream>
 
 namespace scenarios
 {
@@ -16,7 +17,7 @@ public:
 	{ }
 
 	virtual unsigned int getHeight(unsigned int pos)
-	{
+	{	
 		return 15;
 	}
 

@@ -105,6 +105,12 @@ public:
 		m_hNetUpdatesRight = new T[size+1];
 		m_huNetUpdatesLeft = new T[size+1];
 		m_huNetUpdatesRight = new T[size+1];
+		for (unsigned int i = 0; i < size+2; i++) {
+	
+		std::cout << h[i] << "  "; 
+		
+		}
+		std::cout << std::endl;
 	}
 
 	~WavePropagation()

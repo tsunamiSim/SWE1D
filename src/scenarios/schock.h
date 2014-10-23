@@ -19,13 +19,22 @@ public:
 		if (pos <= m_size/2 - 2)
 			return 15;
 		if (pos >= m_size/2 + 2)
-			return 14;
+			return 15;
 		return 10;
 	}
 
 	T getCellSize()
 	{
 		return 1000.f / m_size;
+	}
+	
+	int getMomentum(unsigned int pos)
+	{
+	if (pos <= m_size/2 - 2)
+			return getHeight(pos);
+		if (pos >= m_size/2 + 2)
+			return getHeight(pos) * -1;
+		return 0;
 	}
 };
 
