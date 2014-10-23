@@ -38,6 +38,7 @@
 #include "WavePropagation.h"
 #include "scenarios/dambreak.h"
 #include "scenarios/schock.h"
+#include "scenarios/rare.h"
 #include "writer/ConsoleWriter.h"
 #include "writer/VtkWriter.h"
 #include "tools/args.h"
@@ -51,9 +52,9 @@ int main(int argc, char** argv)
 	tools::Args args(argc, argv);
 
 	// Scenario
-	scenarios::DamBreak scenario(args.size());
+	//scenarios::DamBreak scenario(args.size());
 	//scenarios::Schock scenario(args.size());
-	//scenarios::Rare scenario(args.size());
+	scenarios::Rare scenario(args.size());
 
 	// Allocate memory
 	// Water height
