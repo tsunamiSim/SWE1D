@@ -1,3 +1,6 @@
+#ifndef SCENARIOBASE_H_
+#define SCENARIOBASE_H_
+
 #include "./../types.h"
 
 namespace scenarios
@@ -28,3 +31,5 @@ public:
 	}
 };
 }
+
+#endif /* SCENARIOBASE_H_ */
