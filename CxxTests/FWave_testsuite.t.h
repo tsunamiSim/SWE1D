@@ -1,4 +1,5 @@
 #include <cxxtest/TestSuite.h>
+#include "./../src/solvers/FWave.hpp"
 
 class FWaveTest : public CxxTest::TestSuite
 {

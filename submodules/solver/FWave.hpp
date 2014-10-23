@@ -7,6 +7,9 @@
 using namespace std;
 
 namespace solver { 
+/**
+*	Simple solver used to compute net udates for a given set of height, momentum and bathymetry values
+*/
 template <typename T> class FWave
 {
 private:
@@ -46,14 +49,38 @@ private:
 	}
 
 public:
+	/**
+	*	The default constructor just setting gravity
+	*/
 	FWave()
 	{
 	gravity = 9.81;
 	}
 
+	/**
+	*	Computes the next timesteps net updates
+	*
+	*	@param i_h_l the height on the left cell of the edge
+	*	@param i_h_r the height on the right cell of the edge
+	*	@param i_hu_l the momentum on the left cell of the edge
+	*	@param i_hu_r the momentum on the right cell of the edge
+	*	@param i_b_l the bathymetry on the left cell of the edge
+	*	@param i_b_r the bathymetry on the right cell of the edge
+	*
+	*	@param o_lamda_l output: the eigenvalue for the left
+	*	@param o_lamda_r output: the eigenvalue for the right
+	*	@param o_Q_l output: 
+	*	@param o_Q_r output: 
+	*	@param o_max_wd output: the maximum wavespeed (which is the maximum of the left and right wave speed)
+	*/
 	void computeNetUpdates(T i_h_l, T i_h_r, T i_hu_l, T i_hu_r, T i_b_l, T i_b_r,
 			T& o_lamda_l, T& o_lamda_r, T& o_Q_l, T& o_Q_r, T& o_max_ws)
 	{
+	
+	// assert that height is not zero since when calculating the particle speed there is a division through it
+	assert(i_h_l != 0);
+	assert(i_h_r != 0);
+	
 	h_l = i_h_l;
 	h_r = i_h_r;
 	hu_l = i_hu_l;
