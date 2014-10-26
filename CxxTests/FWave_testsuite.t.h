@@ -13,6 +13,9 @@ private:
 	solver::FWave<float> *m_solver;
 
 public:
+	/**
+	 * Tests 10000 steady states 
+	 */
 	void test_steady_states(void)
 	{
 	testrange = 100;
@@ -33,6 +36,9 @@ public:
 		}
 	}
 
+	/**
+	 * Tests correctness for [Lambda1 < 0 && Lambda 2 < 0] and [Lambda1 > 0 && Lambda 2 > 0]
+	 */
 	void test_both_lamda_pos_neg(void)
 	{		
 	testrange = 100;

@@ -62,6 +62,8 @@ public:
 	}
 
 	/**
+       	 * @param pos The index of the cell
+	 * 
 	 * @return Initial water height at pos
 	 */
 	T getHeight(unsigned int pos)
@@ -72,6 +74,8 @@ public:
 	}
 	
 	/**
+	 * @param pos The index of the cell
+	 * 
 	 * @return Initial Momentum
 	 */
 	T getMomentum(unsigned int pos)

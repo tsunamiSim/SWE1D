@@ -12,7 +12,7 @@ Inheritance diagram for scenarios\-:\-:Dam\-Break\-:\begin{figure}[H]
 \item 
 \hyperlink{classscenarios_1_1DamBreak_a7bbd8931d94ea4f001061bde5cb0c57b}{Dam\-Break} (unsigned int size)
 \item 
-unsigned int \hyperlink{classscenarios_1_1DamBreak_a16c6bc54260b58f539677c4500130223}{get\-Height} (unsigned int pos)
+T \hyperlink{classscenarios_1_1DamBreak_adb2898029dbd63464bbbb9367b58b075}{get\-Height} (unsigned int pos)
 \item 
 T \hyperlink{classscenarios_1_1DamBreak_a15d0ac494904dfb9059f0b8685e49e0f}{get\-Momentum} (unsigned int pos)
 \item 
@@ -53,19 +53,24 @@ Cell size of one cell (= domain size/number of cells)
 
 Reimplemented from \hyperlink{classscenarios_1_1scenarioBase_a76f3d6f7004dda1344e62bb095d7daca}{scenarios\-::scenario\-Base}.
 
-\hypertarget{classscenarios_1_1DamBreak_a16c6bc54260b58f539677c4500130223}{\index{scenarios\-::\-Dam\-Break@{scenarios\-::\-Dam\-Break}!get\-Height@{get\-Height}}
+\hypertarget{classscenarios_1_1DamBreak_adb2898029dbd63464bbbb9367b58b075}{\index{scenarios\-::\-Dam\-Break@{scenarios\-::\-Dam\-Break}!get\-Height@{get\-Height}}
 \index{get\-Height@{get\-Height}!scenarios::DamBreak@{scenarios\-::\-Dam\-Break}}
-\subsubsection[{get\-Height}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int scenarios\-::\-Dam\-Break\-::get\-Height (
+\subsubsection[{get\-Height}]{\setlength{\rightskip}{0pt plus 5cm}T scenarios\-::\-Dam\-Break\-::get\-Height (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{pos}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classscenarios_1_1DamBreak_a16c6bc54260b58f539677c4500130223}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classscenarios_1_1DamBreak_adb2898029dbd63464bbbb9367b58b075}
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The index of the cell\\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Initial water height at pos 
 \end{DoxyReturn}
 
 
-Reimplemented from \hyperlink{classscenarios_1_1scenarioBase_ab4b832324300d6921467af8f71b646c2}{scenarios\-::scenario\-Base}.
+Reimplemented from \hyperlink{classscenarios_1_1scenarioBase_abf012aedec3ba04bbb5f84142ba568ca}{scenarios\-::scenario\-Base}.
 
 \hypertarget{classscenarios_1_1DamBreak_a15d0ac494904dfb9059f0b8685e49e0f}{\index{scenarios\-::\-Dam\-Break@{scenarios\-::\-Dam\-Break}!get\-Momentum@{get\-Momentum}}
 \index{get\-Momentum@{get\-Momentum}!scenarios::DamBreak@{scenarios\-::\-Dam\-Break}}
@@ -74,15 +79,13 @@ Reimplemented from \hyperlink{classscenarios_1_1scenarioBase_ab4b832324300d69214
 \item[{unsigned int}]{pos}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classscenarios_1_1DamBreak_a15d0ac494904dfb9059f0b8685e49e0f}
-Returns the initial momentum at a given cell
-
 
 \begin{DoxyParams}{Parameters}
 {\em pos} & The index of the cell\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The momentum at the specified cell 
+Initial Momentum 
 \end{DoxyReturn}
 
 

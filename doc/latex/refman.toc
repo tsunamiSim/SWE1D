@@ -1,0 +1,93 @@
+\contentsline {chapter}{\numberline {1}Hierarchical Index}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Class Hierarchy}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}
+\contentsline {chapter}{\numberline {4}Class Documentation}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}tools\discretionary {-}{}{}:\discretionary {-}{}{}:Args Class Reference}{7}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{7}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}writer\discretionary {-}{}{}:\discretionary {-}{}{}:Console\discretionary {-}{}{}Writer Class Reference}{7}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{7}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Member Function Documentation}{7}{subsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2.1}write}{8}{subsubsection.4.2.2.1}
+\contentsline {section}{\numberline {4.3}scenarios\discretionary {-}{}{}:\discretionary {-}{}{}:Dam\discretionary {-}{}{}Break Class Reference}{9}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Constructor \& Destructor Documentation}{9}{subsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.1.1}Dam\discretionary {-}{}{}Break}{9}{subsubsection.4.3.1.1}
+\contentsline {subsection}{\numberline {4.3.2}Member Function Documentation}{9}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}get\discretionary {-}{}{}Cell\discretionary {-}{}{}Size}{9}{subsubsection.4.3.2.1}
+\contentsline {subsubsection}{\numberline {4.3.2.2}get\discretionary {-}{}{}Height}{9}{subsubsection.4.3.2.2}
+\contentsline {subsubsection}{\numberline {4.3.2.3}get\discretionary {-}{}{}Momentum}{10}{subsubsection.4.3.2.3}
+\contentsline {section}{\numberline {4.4}solver\discretionary {-}{}{}:\discretionary {-}{}{}:F\discretionary {-}{}{}Wave$<$ T $>$ Class Template Reference}{10}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{10}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Constructor \& Destructor Documentation}{10}{subsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.2.1}F\discretionary {-}{}{}Wave}{10}{subsubsection.4.4.2.1}
+\contentsline {subsection}{\numberline {4.4.3}Member Function Documentation}{10}{subsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.3.1}compute\discretionary {-}{}{}Net\discretionary {-}{}{}Updates}{10}{subsubsection.4.4.3.1}
+\contentsline {section}{\numberline {4.5}F\discretionary {-}{}{}Wave\discretionary {-}{}{}Test Class Reference}{11}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Member Function Documentation}{11}{subsection.4.5.1}
+\contentsline {subsubsection}{\numberline {4.5.1.1}test\discretionary {-}{}{}\_\discretionary {-}{}{}both\discretionary {-}{}{}\_\discretionary {-}{}{}lamda\discretionary {-}{}{}\_\discretionary {-}{}{}pos\discretionary {-}{}{}\_\discretionary {-}{}{}neg}{11}{subsubsection.4.5.1.1}
+\contentsline {subsubsection}{\numberline {4.5.1.2}test\discretionary {-}{}{}\_\discretionary {-}{}{}steady\discretionary {-}{}{}\_\discretionary {-}{}{}states}{11}{subsubsection.4.5.1.2}
+\contentsline {section}{\numberline {4.6}tools\discretionary {-}{}{}:\discretionary {-}{}{}:Logger Class Reference}{11}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Member Function Documentation}{12}{subsection.4.6.1}
+\contentsline {subsubsection}{\numberline {4.6.1.1}operator$<$$<$}{12}{subsubsection.4.6.1.1}
+\contentsline {subsubsection}{\numberline {4.6.1.2}operator$<$$<$}{12}{subsubsection.4.6.1.2}
+\contentsline {section}{\numberline {4.7}scenarios\discretionary {-}{}{}:\discretionary {-}{}{}:Rare Class Reference}{12}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Constructor \& Destructor Documentation}{13}{subsection.4.7.1}
+\contentsline {subsubsection}{\numberline {4.7.1.1}Rare}{13}{subsubsection.4.7.1.1}
+\contentsline {subsection}{\numberline {4.7.2}Member Function Documentation}{13}{subsection.4.7.2}
+\contentsline {subsubsection}{\numberline {4.7.2.1}get\discretionary {-}{}{}Height}{13}{subsubsection.4.7.2.1}
+\contentsline {subsubsection}{\numberline {4.7.2.2}get\discretionary {-}{}{}Momentum}{13}{subsubsection.4.7.2.2}
+\contentsline {section}{\numberline {4.8}scenarios\discretionary {-}{}{}:\discretionary {-}{}{}:scenario\discretionary {-}{}{}Base Class Reference}{13}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Constructor \& Destructor Documentation}{14}{subsection.4.8.1}
+\contentsline {subsubsection}{\numberline {4.8.1.1}scenario\discretionary {-}{}{}Base}{14}{subsubsection.4.8.1.1}
+\contentsline {subsection}{\numberline {4.8.2}Member Function Documentation}{14}{subsection.4.8.2}
+\contentsline {subsubsection}{\numberline {4.8.2.1}get\discretionary {-}{}{}Cell\discretionary {-}{}{}Size}{14}{subsubsection.4.8.2.1}
+\contentsline {subsubsection}{\numberline {4.8.2.2}get\discretionary {-}{}{}Height}{14}{subsubsection.4.8.2.2}
+\contentsline {subsubsection}{\numberline {4.8.2.3}get\discretionary {-}{}{}Momentum}{14}{subsubsection.4.8.2.3}
+\contentsline {subsection}{\numberline {4.8.3}Member Data Documentation}{15}{subsection.4.8.3}
+\contentsline {subsubsection}{\numberline {4.8.3.1}m\discretionary {-}{}{}\_\discretionary {-}{}{}size}{15}{subsubsection.4.8.3.1}
+\contentsline {section}{\numberline {4.9}scenarios\discretionary {-}{}{}:\discretionary {-}{}{}:Shock Class Reference}{15}{section.4.9}
+\contentsline {subsection}{\numberline {4.9.1}Detailed Description}{15}{subsection.4.9.1}
+\contentsline {subsection}{\numberline {4.9.2}Constructor \& Destructor Documentation}{15}{subsection.4.9.2}
+\contentsline {subsubsection}{\numberline {4.9.2.1}Shock}{15}{subsubsection.4.9.2.1}
+\contentsline {subsection}{\numberline {4.9.3}Member Function Documentation}{16}{subsection.4.9.3}
+\contentsline {subsubsection}{\numberline {4.9.3.1}get\discretionary {-}{}{}Height}{16}{subsubsection.4.9.3.1}
+\contentsline {subsubsection}{\numberline {4.9.3.2}get\discretionary {-}{}{}Momentum}{16}{subsubsection.4.9.3.2}
+\contentsline {section}{\numberline {4.10}cxxtest.\discretionary {-}{}{}Tool\discretionary {-}{}{}Cxx\discretionary {-}{}{}Test\discretionary {-}{}{}Warning Class Reference}{16}{section.4.10}
+\contentsline {section}{\numberline {4.11}writer\discretionary {-}{}{}:\discretionary {-}{}{}:Vtk\discretionary {-}{}{}Writer Class Reference}{16}{section.4.11}
+\contentsline {subsection}{\numberline {4.11.1}Detailed Description}{17}{subsection.4.11.1}
+\contentsline {subsection}{\numberline {4.11.2}Member Function Documentation}{17}{subsection.4.11.2}
+\contentsline {subsubsection}{\numberline {4.11.2.1}write}{17}{subsubsection.4.11.2.1}
+\contentsline {section}{\numberline {4.12}Wave\discretionary {-}{}{}Propagation Class Reference}{17}{section.4.12}
+\contentsline {subsection}{\numberline {4.12.1}Detailed Description}{17}{subsection.4.12.1}
+\contentsline {subsection}{\numberline {4.12.2}Constructor \& Destructor Documentation}{18}{subsection.4.12.2}
+\contentsline {subsubsection}{\numberline {4.12.2.1}Wave\discretionary {-}{}{}Propagation}{18}{subsubsection.4.12.2.1}
+\contentsline {subsection}{\numberline {4.12.3}Member Function Documentation}{18}{subsection.4.12.3}
+\contentsline {subsubsection}{\numberline {4.12.3.1}compute\discretionary {-}{}{}Numerical\discretionary {-}{}{}Fluxes}{18}{subsubsection.4.12.3.1}
+\contentsline {subsubsection}{\numberline {4.12.3.2}set\discretionary {-}{}{}Outflow\discretionary {-}{}{}Boundary\discretionary {-}{}{}Conditions}{18}{subsubsection.4.12.3.2}
+\contentsline {subsubsection}{\numberline {4.12.3.3}update\discretionary {-}{}{}Unknowns}{18}{subsubsection.4.12.3.3}
+\contentsline {chapter}{\numberline {5}File Documentation}{19}{chapter.5}
+\contentsline {section}{\numberline {5.1}src/main.cpp File Reference}{19}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{19}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}src/scenarios/dambreak.h File Reference}{20}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{20}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}src/tools/args.cpp File Reference}{20}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{21}{subsection.5.3.1}
+\contentsline {section}{\numberline {5.4}src/tools/args.h File Reference}{21}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{21}{subsection.5.4.1}
+\contentsline {section}{\numberline {5.5}src/tools/logger.cpp File Reference}{22}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{22}{subsection.5.5.1}
+\contentsline {section}{\numberline {5.6}src/tools/logger.h File Reference}{23}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{23}{subsection.5.6.1}
+\contentsline {section}{\numberline {5.7}src/types.h File Reference}{23}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{23}{subsection.5.7.1}
+\contentsline {section}{\numberline {5.8}src/\discretionary {-}{}{}Wave\discretionary {-}{}{}Propagation.cpp File Reference}{24}{section.5.8}
+\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{24}{subsection.5.8.1}
+\contentsline {section}{\numberline {5.9}src/\discretionary {-}{}{}Wave\discretionary {-}{}{}Propagation.h File Reference}{25}{section.5.9}
+\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{25}{subsection.5.9.1}
+\contentsline {section}{\numberline {5.10}src/writer/\discretionary {-}{}{}Console\discretionary {-}{}{}Writer.h File Reference}{25}{section.5.10}
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{26}{subsection.5.10.1}
+\contentsline {section}{\numberline {5.11}src/writer/\discretionary {-}{}{}Vtk\discretionary {-}{}{}Writer.h File Reference}{26}{section.5.11}
+\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{26}{subsection.5.11.1}
+\contentsline {chapter}{Index}{28}{section*.28}

@@ -99,47 +99,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classscenarios_1_1DamBreak.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="classscenarios_1_1DamBreak.html">DamBreak</a> : <span class="keyword">public</span> <a class="code" href="classscenarios_1_1scenarioBase.html">scenarioBase</a></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classscenarios_1_1DamBreak.html#a7bbd8931d94ea4f001061bde5cb0c57b">   56</a></span>&#160;    <a class="code" href="classscenarios_1_1DamBreak.html#a7bbd8931d94ea4f001061bde5cb0c57b">DamBreak</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        : <a class="code" href="classscenarios_1_1scenarioBase.html">scenarioBase</a>(size)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classscenarios_1_1DamBreak.html#a16c6bc54260b58f539677c4500130223">   64</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classscenarios_1_1DamBreak.html#a16c6bc54260b58f539677c4500130223">getHeight</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> pos)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> (pos &lt;= <a class="code" href="classscenarios_1_1scenarioBase.html#a67c277c3749ab83d0cb1749200a38791">m_size</a>/5)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">return</span> 14;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> 3.5;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classscenarios_1_1DamBreak.html#a15d0ac494904dfb9059f0b8685e49e0f">   71</a></span>&#160;    T <a class="code" href="classscenarios_1_1DamBreak.html#a15d0ac494904dfb9059f0b8685e49e0f">getMomentum</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> pos)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span>(pos &lt;= <a class="code" href="classscenarios_1_1scenarioBase.html#a67c277c3749ab83d0cb1749200a38791">m_size</a>/5)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> 0.7;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classscenarios_1_1DamBreak.html#a4ca1a408aa07a2c3ac0a5613f9d06b7d">   81</a></span>&#160;    T <a class="code" href="classscenarios_1_1DamBreak.html#a4ca1a408aa07a2c3ac0a5613f9d06b7d">getCellSize</a>()</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> damPos;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> villagePos;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classscenarios_1_1DamBreak.html#a7bbd8931d94ea4f001061bde5cb0c57b">   58</a></span>&#160;    <a class="code" href="classscenarios_1_1DamBreak.html#a7bbd8931d94ea4f001061bde5cb0c57b">DamBreak</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        : <a class="code" href="classscenarios_1_1scenarioBase.html">scenarioBase</a>(size),</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;          damPos(<a class="code" href="classscenarios_1_1scenarioBase.html#a67c277c3749ab83d0cb1749200a38791">m_size</a> * 4000/30000)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classscenarios_1_1DamBreak.html#adb2898029dbd63464bbbb9367b58b075">   69</a></span>&#160;    T <a class="code" href="classscenarios_1_1DamBreak.html#adb2898029dbd63464bbbb9367b58b075">getHeight</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> pos)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span> (pos &lt;= damPos)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span> 14;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> 3.5;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classscenarios_1_1DamBreak.html#a15d0ac494904dfb9059f0b8685e49e0f">   81</a></span>&#160;    T <a class="code" href="classscenarios_1_1DamBreak.html#a15d0ac494904dfb9059f0b8685e49e0f">getMomentum</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> pos)</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> 1000.f / <a class="code" href="classscenarios_1_1scenarioBase.html#a67c277c3749ab83d0cb1749200a38791">m_size</a>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SCENARIOS_DAMBREAK_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span>(pos &lt;= damPos)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> 0.7;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classscenarios_1_1DamBreak.html#a4ca1a408aa07a2c3ac0a5613f9d06b7d">   91</a></span>&#160;    T <a class="code" href="classscenarios_1_1DamBreak.html#a4ca1a408aa07a2c3ac0a5613f9d06b7d">getCellSize</a>()</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> 30000.f / <a class="code" href="classscenarios_1_1scenarioBase.html#a67c277c3749ab83d0cb1749200a38791">m_size</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SCENARIOS_DAMBREAK_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="classscenarios_1_1DamBreak_html_adb2898029dbd63464bbbb9367b58b075"><div class="ttname"><a href="classscenarios_1_1DamBreak.html#adb2898029dbd63464bbbb9367b58b075">scenarios::DamBreak::getHeight</a></div><div class="ttdeci">T getHeight(unsigned int pos)</div><div class="ttdef"><b>Definition:</b> dambreak.h:69</div></div>
 <div class="ttc" id="classscenarios_1_1scenarioBase_html"><div class="ttname"><a href="classscenarios_1_1scenarioBase.html">scenarios::scenarioBase</a></div><div class="ttdef"><b>Definition:</b> scenario.h:9</div></div>
 <div class="ttc" id="classscenarios_1_1scenarioBase_html_a67c277c3749ab83d0cb1749200a38791"><div class="ttname"><a href="classscenarios_1_1scenarioBase.html#a67c277c3749ab83d0cb1749200a38791">scenarios::scenarioBase::m_size</a></div><div class="ttdeci">const unsigned int m_size</div><div class="ttdef"><b>Definition:</b> scenario.h:13</div></div>
-<div class="ttc" id="classscenarios_1_1DamBreak_html_a4ca1a408aa07a2c3ac0a5613f9d06b7d"><div class="ttname"><a href="classscenarios_1_1DamBreak.html#a4ca1a408aa07a2c3ac0a5613f9d06b7d">scenarios::DamBreak::getCellSize</a></div><div class="ttdeci">T getCellSize()</div><div class="ttdef"><b>Definition:</b> dambreak.h:81</div></div>
-<div class="ttc" id="classscenarios_1_1DamBreak_html_a7bbd8931d94ea4f001061bde5cb0c57b"><div class="ttname"><a href="classscenarios_1_1DamBreak.html#a7bbd8931d94ea4f001061bde5cb0c57b">scenarios::DamBreak::DamBreak</a></div><div class="ttdeci">DamBreak(unsigned int size)</div><div class="ttdef"><b>Definition:</b> dambreak.h:56</div></div>
+<div class="ttc" id="classscenarios_1_1DamBreak_html_a4ca1a408aa07a2c3ac0a5613f9d06b7d"><div class="ttname"><a href="classscenarios_1_1DamBreak.html#a4ca1a408aa07a2c3ac0a5613f9d06b7d">scenarios::DamBreak::getCellSize</a></div><div class="ttdeci">T getCellSize()</div><div class="ttdef"><b>Definition:</b> dambreak.h:91</div></div>
+<div class="ttc" id="classscenarios_1_1DamBreak_html_a7bbd8931d94ea4f001061bde5cb0c57b"><div class="ttname"><a href="classscenarios_1_1DamBreak.html#a7bbd8931d94ea4f001061bde5cb0c57b">scenarios::DamBreak::DamBreak</a></div><div class="ttdeci">DamBreak(unsigned int size)</div><div class="ttdef"><b>Definition:</b> dambreak.h:58</div></div>
 <div class="ttc" id="classscenarios_1_1DamBreak_html"><div class="ttname"><a href="classscenarios_1_1DamBreak.html">scenarios::DamBreak</a></div><div class="ttdef"><b>Definition:</b> dambreak.h:46</div></div>
-<div class="ttc" id="classscenarios_1_1DamBreak_html_a15d0ac494904dfb9059f0b8685e49e0f"><div class="ttname"><a href="classscenarios_1_1DamBreak.html#a15d0ac494904dfb9059f0b8685e49e0f">scenarios::DamBreak::getMomentum</a></div><div class="ttdeci">T getMomentum(unsigned int pos)</div><div class="ttdef"><b>Definition:</b> dambreak.h:71</div></div>
-<div class="ttc" id="classscenarios_1_1DamBreak_html_a16c6bc54260b58f539677c4500130223"><div class="ttname"><a href="classscenarios_1_1DamBreak.html#a16c6bc54260b58f539677c4500130223">scenarios::DamBreak::getHeight</a></div><div class="ttdeci">unsigned int getHeight(unsigned int pos)</div><div class="ttdef"><b>Definition:</b> dambreak.h:64</div></div>
+<div class="ttc" id="classscenarios_1_1DamBreak_html_a15d0ac494904dfb9059f0b8685e49e0f"><div class="ttname"><a href="classscenarios_1_1DamBreak.html#a15d0ac494904dfb9059f0b8685e49e0f">scenarios::DamBreak::getMomentum</a></div><div class="ttdeci">T getMomentum(unsigned int pos)</div><div class="ttdef"><b>Definition:</b> dambreak.h:81</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 26 2014 11:44:52 for swe1d by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 26 2014 18:36:23 for swe1d by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

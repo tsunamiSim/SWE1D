@@ -107,7 +107,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classscenarios_1_1Rare.html#ae73e80c93421dff083099eb85234de44">   34</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classscenarios_1_1Rare.html#ae73e80c93421dff083099eb85234de44">getHeight</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> pos)</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classscenarios_1_1Rare.html#adac016d86c243d8a08227927cabc368c">   34</a></span>&#160;    T <a class="code" href="classscenarios_1_1Rare.html#adac016d86c243d8a08227927cabc368c">getHeight</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> pos)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">if</span> (pos &lt;= left)</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">return</span> 10;</div>
@@ -120,9 +120,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        T u = 2;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span>(pos &lt;= left)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classscenarios_1_1Rare.html#ae73e80c93421dff083099eb85234de44">getHeight</a>(pos) * u * -1;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classscenarios_1_1Rare.html#adac016d86c243d8a08227927cabc368c">getHeight</a>(pos) * u * -1;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span>(pos &gt;= right)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classscenarios_1_1Rare.html#ae73e80c93421dff083099eb85234de44">getHeight</a>(pos) * u;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classscenarios_1_1Rare.html#adac016d86c243d8a08227927cabc368c">getHeight</a>(pos) * u;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
@@ -133,12 +133,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classscenarios_1_1Rare_html"><div class="ttname"><a href="classscenarios_1_1Rare.html">scenarios::Rare</a></div><div class="ttdef"><b>Definition:</b> rare.h:9</div></div>
 <div class="ttc" id="classscenarios_1_1Rare_html_a33b6c2b5a5d81d7e1a1f5b0c0028ac2d"><div class="ttname"><a href="classscenarios_1_1Rare.html#a33b6c2b5a5d81d7e1a1f5b0c0028ac2d">scenarios::Rare::getMomentum</a></div><div class="ttdeci">T getMomentum(unsigned int pos)</div><div class="ttdef"><b>Definition:</b> rare.h:50</div></div>
 <div class="ttc" id="classscenarios_1_1scenarioBase_html"><div class="ttname"><a href="classscenarios_1_1scenarioBase.html">scenarios::scenarioBase</a></div><div class="ttdef"><b>Definition:</b> scenario.h:9</div></div>
-<div class="ttc" id="classscenarios_1_1Rare_html_ae73e80c93421dff083099eb85234de44"><div class="ttname"><a href="classscenarios_1_1Rare.html#ae73e80c93421dff083099eb85234de44">scenarios::Rare::getHeight</a></div><div class="ttdeci">unsigned int getHeight(unsigned int pos)</div><div class="ttdef"><b>Definition:</b> rare.h:34</div></div>
+<div class="ttc" id="classscenarios_1_1Rare_html_adac016d86c243d8a08227927cabc368c"><div class="ttname"><a href="classscenarios_1_1Rare.html#adac016d86c243d8a08227927cabc368c">scenarios::Rare::getHeight</a></div><div class="ttdeci">T getHeight(unsigned int pos)</div><div class="ttdef"><b>Definition:</b> rare.h:34</div></div>
 <div class="ttc" id="classscenarios_1_1Rare_html_af503e3e602a16fe2fa3bcdbe5ea4b61e"><div class="ttname"><a href="classscenarios_1_1Rare.html#af503e3e602a16fe2fa3bcdbe5ea4b61e">scenarios::Rare::Rare</a></div><div class="ttdeci">Rare(unsigned int size)</div><div class="ttdef"><b>Definition:</b> rare.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 26 2014 11:44:52 for swe1d by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 26 2014 18:36:23 for swe1d by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
