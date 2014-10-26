@@ -1,0 +1,80 @@
+\hypertarget{classtools_1_1Logger}{\section{tools\-:\-:Logger Class Reference}
+\label{classtools_1_1Logger}\index{tools\-::\-Logger@{tools\-::\-Logger}}
+}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Level} \{ {\bfseries I\-N\-F\-O}, 
+{\bfseries W\-A\-R\-N\-I\-N\-G}, 
+{\bfseries E\-R\-R\-O\-R}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classtools_1_1Logger_a636053141af12bcbfb816113081c62bc}{void {\bfseries set\-Output\-Stream} (std\-::ostream \&output)}\label{classtools_1_1Logger_a636053141af12bcbfb816113081c62bc}
+
+\item 
+\hypertarget{classtools_1_1Logger_a03851adbc4399c2c0c0e0f85fc6a6ef0}{void {\bfseries log} (std\-::string \&message, Level level=I\-N\-F\-O)}\label{classtools_1_1Logger_a03851adbc4399c2c0c0e0f85fc6a6ef0}
+
+\item 
+\hypertarget{classtools_1_1Logger_a3fdf70d6ab949dd8483ed5bcd49ce420}{void {\bfseries log} (const char $\ast$message, Level level=I\-N\-F\-O)}\label{classtools_1_1Logger_a3fdf70d6ab949dd8483ed5bcd49ce420}
+
+\item 
+\hypertarget{classtools_1_1Logger_ac389acff12d26dbd3fc625c547ac04c7}{void {\bfseries info} (std\-::string \&message)}\label{classtools_1_1Logger_ac389acff12d26dbd3fc625c547ac04c7}
+
+\item 
+\hypertarget{classtools_1_1Logger_a24a476db1d106f5d4b13a9fa39d1b0dc}{void {\bfseries info} (const char $\ast$message)}\label{classtools_1_1Logger_a24a476db1d106f5d4b13a9fa39d1b0dc}
+
+\item 
+\hypertarget{classtools_1_1Logger_a91efb6571b01077f2dfb55c47aaf253e}{std\-::ostream \& {\bfseries info} ()}\label{classtools_1_1Logger_a91efb6571b01077f2dfb55c47aaf253e}
+
+\item 
+\hypertarget{classtools_1_1Logger_a5d3ae06c39df8abc23c2d81de79c882f}{void {\bfseries warning} (std\-::string \&message)}\label{classtools_1_1Logger_a5d3ae06c39df8abc23c2d81de79c882f}
+
+\item 
+\hypertarget{classtools_1_1Logger_abc773c41c59d9afbb620476341f95718}{void {\bfseries warning} (const char $\ast$message)}\label{classtools_1_1Logger_abc773c41c59d9afbb620476341f95718}
+
+\item 
+\hypertarget{classtools_1_1Logger_a8aafc0559791caa80a1f655d4da3e411}{std\-::ostream \& {\bfseries warning} ()}\label{classtools_1_1Logger_a8aafc0559791caa80a1f655d4da3e411}
+
+\item 
+\hypertarget{classtools_1_1Logger_ae7a4f4f4ad7ebf58e89e46f59c124dac}{void {\bfseries error} (std\-::string \&message)}\label{classtools_1_1Logger_ae7a4f4f4ad7ebf58e89e46f59c124dac}
+
+\item 
+\hypertarget{classtools_1_1Logger_a769bbaa6d8dcc4a10803107c01d1a42c}{void {\bfseries error} (const char $\ast$message)}\label{classtools_1_1Logger_a769bbaa6d8dcc4a10803107c01d1a42c}
+
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classtools_1_1Logger}{Logger} \& \hyperlink{classtools_1_1Logger_a329a9574f28452d55118911d2ce428f8}{operator$<$$<$} (T value)
+\item 
+\hyperlink{classtools_1_1Logger}{Logger} \& \hyperlink{classtools_1_1Logger_aad70622a440e19c348291a46be9d0751}{operator$<$$<$} (std\-::ostream \&($\ast$func)(std\-::ostream \&))
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classtools_1_1Logger_a341eaab3865b60362db6736c2e2b7c68}{static \hyperlink{classtools_1_1Logger}{Logger} {\bfseries logger}}\label{classtools_1_1Logger_a341eaab3865b60362db6736c2e2b7c68}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classtools_1_1Logger_a329a9574f28452d55118911d2ce428f8}{\index{tools\-::\-Logger@{tools\-::\-Logger}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!tools::Logger@{tools\-::\-Logger}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Logger}\& tools\-::\-Logger\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{T}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtools_1_1Logger_a329a9574f28452d55118911d2ce428f8}
+Can be used to print arbitrary info messages. Does not append std\-::endl. \hypertarget{classtools_1_1Logger_aad70622a440e19c348291a46be9d0751}{\index{tools\-::\-Logger@{tools\-::\-Logger}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!tools::Logger@{tools\-::\-Logger}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger}\& tools\-::\-Logger\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&($\ast$)(std\-::ostream \&)}]{func}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classtools_1_1Logger_aad70622a440e19c348291a46be9d0751}
+Allow to print std\-::endl 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/tools/\hyperlink{logger_8h}{logger.\-h}\item 
+src/tools/\hyperlink{logger_8cpp}{logger.\-cpp}\end{DoxyCompactItemize}

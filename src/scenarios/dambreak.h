@@ -63,9 +63,16 @@ public:
 	 */
 	unsigned int getHeight(unsigned int pos)
 	{
-		if (pos <= m_size/2)
-			return 15;
-		return 10;
+		if (pos <= m_size/5)
+			return 14;
+		return 3.5;
+	}
+
+	T getMomentum(unsigned int pos)
+	{
+		if(pos <= m_size/5)
+			return 0;
+		return 0.7;
 	}
 
 	/**

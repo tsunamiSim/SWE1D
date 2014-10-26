@@ -1,0 +1,95 @@
+\hypertarget{classscenarios_1_1DamBreak}{\section{scenarios\-:\-:Dam\-Break Class Reference}
+\label{classscenarios_1_1DamBreak}\index{scenarios\-::\-Dam\-Break@{scenarios\-::\-Dam\-Break}}
+}
+Inheritance diagram for scenarios\-:\-:Dam\-Break\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classscenarios_1_1DamBreak}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classscenarios_1_1DamBreak_a7bbd8931d94ea4f001061bde5cb0c57b}{Dam\-Break} (unsigned int size)
+\item 
+unsigned int \hyperlink{classscenarios_1_1DamBreak_a16c6bc54260b58f539677c4500130223}{get\-Height} (unsigned int pos)
+\item 
+T \hyperlink{classscenarios_1_1DamBreak_a15d0ac494904dfb9059f0b8685e49e0f}{get\-Momentum} (unsigned int pos)
+\item 
+T \hyperlink{classscenarios_1_1DamBreak_a4ca1a408aa07a2c3ac0a5613f9d06b7d}{get\-Cell\-Size} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classscenarios_1_1DamBreak_a7bbd8931d94ea4f001061bde5cb0c57b}{\index{scenarios\-::\-Dam\-Break@{scenarios\-::\-Dam\-Break}!Dam\-Break@{Dam\-Break}}
+\index{Dam\-Break@{Dam\-Break}!scenarios::DamBreak@{scenarios\-::\-Dam\-Break}}
+\subsubsection[{Dam\-Break}]{\setlength{\rightskip}{0pt plus 5cm}scenarios\-::\-Dam\-Break\-::\-Dam\-Break (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classscenarios_1_1DamBreak_a7bbd8931d94ea4f001061bde5cb0c57b}
+Constructor for the scenario
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The amount of cells which are simulated \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classscenarios_1_1DamBreak_a4ca1a408aa07a2c3ac0a5613f9d06b7d}{\index{scenarios\-::\-Dam\-Break@{scenarios\-::\-Dam\-Break}!get\-Cell\-Size@{get\-Cell\-Size}}
+\index{get\-Cell\-Size@{get\-Cell\-Size}!scenarios::DamBreak@{scenarios\-::\-Dam\-Break}}
+\subsubsection[{get\-Cell\-Size}]{\setlength{\rightskip}{0pt plus 5cm}T scenarios\-::\-Dam\-Break\-::get\-Cell\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classscenarios_1_1DamBreak_a4ca1a408aa07a2c3ac0a5613f9d06b7d}
+\begin{DoxyReturn}{Returns}
+Cell size of one cell (= domain size/number of cells) 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classscenarios_1_1scenarioBase_a76f3d6f7004dda1344e62bb095d7daca}{scenarios\-::scenario\-Base}.
+
+\hypertarget{classscenarios_1_1DamBreak_a16c6bc54260b58f539677c4500130223}{\index{scenarios\-::\-Dam\-Break@{scenarios\-::\-Dam\-Break}!get\-Height@{get\-Height}}
+\index{get\-Height@{get\-Height}!scenarios::DamBreak@{scenarios\-::\-Dam\-Break}}
+\subsubsection[{get\-Height}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int scenarios\-::\-Dam\-Break\-::get\-Height (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classscenarios_1_1DamBreak_a16c6bc54260b58f539677c4500130223}
+\begin{DoxyReturn}{Returns}
+Initial water height at pos 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classscenarios_1_1scenarioBase_ab4b832324300d6921467af8f71b646c2}{scenarios\-::scenario\-Base}.
+
+\hypertarget{classscenarios_1_1DamBreak_a15d0ac494904dfb9059f0b8685e49e0f}{\index{scenarios\-::\-Dam\-Break@{scenarios\-::\-Dam\-Break}!get\-Momentum@{get\-Momentum}}
+\index{get\-Momentum@{get\-Momentum}!scenarios::DamBreak@{scenarios\-::\-Dam\-Break}}
+\subsubsection[{get\-Momentum}]{\setlength{\rightskip}{0pt plus 5cm}T scenarios\-::\-Dam\-Break\-::get\-Momentum (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classscenarios_1_1DamBreak_a15d0ac494904dfb9059f0b8685e49e0f}
+Returns the initial momentum at a given cell
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The index of the cell\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The momentum at the specified cell 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classscenarios_1_1scenarioBase_a21147d04c54908772ea2d060de49327f}{scenarios\-::scenario\-Base}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/scenarios/\hyperlink{dambreak_8h}{dambreak.\-h}\end{DoxyCompactItemize}
