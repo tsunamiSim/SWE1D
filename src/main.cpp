@@ -53,28 +53,46 @@ int main(int argc, char** argv)
 	T *h = new T[args.size()+2];
 	// Momentum
 	T *hu = new T[args.size()+2];
+	// Scenario	
+	scenarios::scenarioBase* scenario;
+
+	// Initialize scenario
+	switch(args.scenario()){
+	case 1:	
+		scenario = new scenarios::Shock(args.size());
+		break;
+	case 2:
+		scenario = new scenarios::Rare(args.size());
+		break;
+	default:		
+		scenario = new scenarios::DamBreak(args.size());
+		break;
+	}
 
 	// Initialize water height and momentum
 	for (unsigned int i = 0; i < args.size()+2; i++)
 		{
-		h[i] = args.scenario()->getHeight(i);
+		h[i] = scenario->getHeight(i);
 		
-		hu[i] = args.scenario()->getMomentum(i);
+		hu[i] = scenario->getMomentum(i);
 		}
 
 	// Create a writer that is responsible printing out values	
 	
 //	writer::ConsoleWriter writer;	
-	writer::VtkWriter writer("results/swe1d", args.scenario()->getCellSize());
+	writer::VtkWriter writer("results/swe1d", scenario->getCellSize());
 
 	// Helper class computing the wave propagation
-	WavePropagation wavePropagation(h, hu, args.size(), args.scenario()->getCellSize());
+	WavePropagation wavePropagation(h, hu, args.size(), scenario->getCellSize());
 
 	// Write initial data
 	tools::Logger::logger.info("Initial data");
 
 	// Current time of simulation
 	T t = 0;
+	
+	// Collission-time for DamBreak simulation
+	T collission_time = 0;
 
 	writer.write(t, h, hu, args.size());
 
@@ -98,18 +116,25 @@ int main(int argc, char** argv)
 		// Write new values
 		writer.write(t, h, hu, args.size());
 		
-		
-		if(h[args.scenario()->village()] != args.scenario()->getHeight(args.scenario()->village()))
+		// Save collission-time and stop Simulation if index of scenario is 3
+		if((args.scenario() == 3 || args.scenario() == 0 ) 
+			&& h[args.size() * 29000/30000] != scenario->getHeight(args.size() * 29000/30000)
+			&& !collission_time)
 		{					
-			std::cout << "Collission!! Village at " << args.scenario()->village() << "  " << "waterheight:" << h[args.scenario()->village()] << "  " << std::endl;
-			i = args.timeSteps();
+			collission_time = t;
+			if(args.scenario() == 3)
+				i = args.timeSteps();
 		}
 	}
 	
+	// Print collission-time if DamBreak is used and a collission was detected
+	if((args.scenario() == 3 || args.scenario() == 0 ) && collission_time)		
+		tools::Logger::logger << "Water reached the village after " << collission_time << " secounds!" << std::endl;
 
 	// Free allocated memory
 	delete [] h;
 	delete [] hu;
+	delete scenario;
 
 	return 0;
 }

@@ -56,13 +56,6 @@ public:
 		return 1000.f / m_size;
 	}
 	
-	/**
-	* Returns the position of a simulated village
-	*
-	*@return Cellposition of simulated village
-	*/
-	virtual unsigned int village(){return 0;}
-	
 };
 }
 

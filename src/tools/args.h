@@ -62,13 +62,16 @@ private:
 	/** Number of time steps we want to simulate */
 	unsigned int m_timeSteps;
 	/** Scenario we want to simulate */
-	scenarios::scenarioBase *m_scenario;
+	unsigned int m_scenario;
+	
+	
 
 public:
 	Args(int argc, char** argv)
 		: m_size(100),
 		  m_timeSteps(20.0),
 		  m_scenario(0)
+		
 	{
 		const struct option longOptions[] = {
 			{"size", required_argument, 0, 's'},
@@ -78,7 +81,7 @@ public:
 			{0, 0, 0, 0}
 		};
 
-		int c, optionIndex, tmp;
+		int c, optionIndex;
 		std::istringstream ss;
 		while ((c = getopt_long(argc, argv, "s:t:h:z",
 			longOptions, &optionIndex)) >= 0) {
@@ -98,16 +101,15 @@ public:
 				ss >> m_timeSteps;
 				std::cout << m_timeSteps << std::endl;
 				break;
-			case 'z':
-				ss.clear();				
-				ss.str(optarg);
-				ss >> tmp;
-				setScenario(tmp);
-				std::cout << m_scenario << std::endl;
-				break;
 			case 'h':
 				printHelpMessage();
 				exit(0);
+				break;
+			case 'z':
+				ss.clear();
+				ss.str(optarg);
+				ss >> m_timeSteps;
+				std::cout << m_timeSteps << std::endl;
 				break;
 			case '?':
 				printHelpMessage(std::cerr);
@@ -130,31 +132,16 @@ public:
 		return m_timeSteps;
 	}
 
-	scenarios::scenarioBase* scenario()
+	unsigned int scenario()
 	{
-		if(!m_scenario)
-		{
-			m_scenario = new scenarios::DamBreak(m_size);
-		}
-		
 		return m_scenario;
-	} 
+	}
 
-	int getHeight(unsigned int i)
-	{
-		return m_scenario->getHeight(i);
-	} 
-	
-	//~Args()
-	//{
-		//delete m_scenario;
-	//}	
-	
 private:
 	/**
 	 * Prints the help message, showing all available options
 	 *
-	 * @param out The output stream the should be used for
+	 * @param out The output stream that should be used for
 	 *  printing
 	 */	
 	void printHelpMessage(std::ostream &out = std::cout)
@@ -163,24 +150,8 @@ private:
 			<< "  -s, --size=SIZE              domain size" << std::endl
 			<< "  -t, --time=TIME              number of simulated time steps" << std::endl
 			<< "  -h, --help                   this help message" << std::endl
-			<< "  -z, --scenario=INDEX         index of simulated scenario (0: DamBreak (set by default, 1: Shock, 2: RareRare" 				<< std::endl;
+			<< "  -z, --scenario=INDEX         index of simulated scenario [0: DamBreak (set by default), 1: Shock, 2: RareRare, 3: DamBreak with activated stop-function at villagecollission]" 				<< std::endl;
 	}
-
-	void setScenario(unsigned int scenario)
-	{
-		switch(scenario){
-		case 1:
-			m_scenario = new scenarios::Shock(m_size);
-			break;
-		case 2:
-			m_scenario = new scenarios::Rare(m_size);
-			break;
-		default:
-			m_scenario = new scenarios::DamBreak(m_size);
-			break;
-	 	}
-	}
-
 };
 
 } /* namespace tools */
