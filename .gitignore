@@ -16,13 +16,13 @@ CxxTests/*
 site_scons/site_tools/cxxtest.pyc
 
 # Documentation
-doc/
 
 # built files
 *~
 
 # vtr or vtp files
-*.vtr
-*.vtp
+results/*.vtr
+results/*.vtp
+
 
 

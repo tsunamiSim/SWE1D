@@ -1,0 +1,113 @@
+\hypertarget{classWavePropagation}{\section{Wave\-Propagation Class Reference}
+\label{classWavePropagation}\index{Wave\-Propagation@{Wave\-Propagation}}
+}
+
+
+{\ttfamily \#include $<$Wave\-Propagation.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classWavePropagation_ad24b3385c595d77ed4e989bf19cd587d}{Wave\-Propagation} (T $\ast$h, T $\ast$hu, unsigned int size, T cell\-Size)
+\item 
+T \hyperlink{classWavePropagation_a7e4ccdb5689e8e05c5e05887386d0a63}{compute\-Numerical\-Fluxes} ()
+\item 
+void \hyperlink{classWavePropagation_ae7b96a1eb21ae248a37afe4d57d01dd9}{update\-Unknowns} (T dt)
+\item 
+void \hyperlink{classWavePropagation_abdd5acb41399ec0cea238d41b8df1d6b}{set\-Outflow\-Boundary\-Conditions} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Allocated variables\-: unknowns h,hu are defined on grid indices \mbox{[}0,..,n+1\mbox{]} (done by the caller) -\/$>$ computational domain is \mbox{[}1,..,nx\mbox{]} -\/$>$ plus ghost cell layer
+
+net-\/updates are defined for edges with indices \mbox{[}0,..,n\mbox{]}
+
+A left/right net update with index (i-\/1) is located on the edge between cells with index (i-\/1) and (i)\-: 
+\begin{DoxyPre}
+
+
+
+
+
+
+  *  (i-1)  *   (i)   *
+
+
+
+
+
+
+\begin{DoxyVerb}      *
+     ***
+    *****
+      *
+      *
+\end{DoxyVerb}
+
+   NetUpdatesLeft(i-1)
+            or
+   NetUpdatesRight(i-1)
+\end{DoxyPre}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classWavePropagation_ad24b3385c595d77ed4e989bf19cd587d}{\index{Wave\-Propagation@{Wave\-Propagation}!Wave\-Propagation@{Wave\-Propagation}}
+\index{Wave\-Propagation@{Wave\-Propagation}!WavePropagation@{Wave\-Propagation}}
+\subsubsection[{Wave\-Propagation}]{\setlength{\rightskip}{0pt plus 5cm}Wave\-Propagation\-::\-Wave\-Propagation (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{h, }
+\item[{T $\ast$}]{hu, }
+\item[{unsigned int}]{size, }
+\item[{T}]{cell\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classWavePropagation_ad24b3385c595d77ed4e989bf19cd587d}
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Domain size (= number of cells) without ghost cells \\
+\hline
+{\em cell\-Size} & Size of one cell \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classWavePropagation_a7e4ccdb5689e8e05c5e05887386d0a63}{\index{Wave\-Propagation@{Wave\-Propagation}!compute\-Numerical\-Fluxes@{compute\-Numerical\-Fluxes}}
+\index{compute\-Numerical\-Fluxes@{compute\-Numerical\-Fluxes}!WavePropagation@{Wave\-Propagation}}
+\subsubsection[{compute\-Numerical\-Fluxes}]{\setlength{\rightskip}{0pt plus 5cm}T Wave\-Propagation\-::compute\-Numerical\-Fluxes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classWavePropagation_a7e4ccdb5689e8e05c5e05887386d0a63}
+Computes the net-\/updates from the unknowns
+
+\begin{DoxyReturn}{Returns}
+The maximum possible time step 
+\end{DoxyReturn}
+\hypertarget{classWavePropagation_abdd5acb41399ec0cea238d41b8df1d6b}{\index{Wave\-Propagation@{Wave\-Propagation}!set\-Outflow\-Boundary\-Conditions@{set\-Outflow\-Boundary\-Conditions}}
+\index{set\-Outflow\-Boundary\-Conditions@{set\-Outflow\-Boundary\-Conditions}!WavePropagation@{Wave\-Propagation}}
+\subsubsection[{set\-Outflow\-Boundary\-Conditions}]{\setlength{\rightskip}{0pt plus 5cm}void Wave\-Propagation\-::set\-Outflow\-Boundary\-Conditions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classWavePropagation_abdd5acb41399ec0cea238d41b8df1d6b}
+Updates h and hu according to the outflow condition to both boundaries \hypertarget{classWavePropagation_ae7b96a1eb21ae248a37afe4d57d01dd9}{\index{Wave\-Propagation@{Wave\-Propagation}!update\-Unknowns@{update\-Unknowns}}
+\index{update\-Unknowns@{update\-Unknowns}!WavePropagation@{Wave\-Propagation}}
+\subsubsection[{update\-Unknowns}]{\setlength{\rightskip}{0pt plus 5cm}void Wave\-Propagation\-::update\-Unknowns (
+\begin{DoxyParamCaption}
+\item[{T}]{dt}
+\end{DoxyParamCaption}
+)}}\label{classWavePropagation_ae7b96a1eb21ae248a37afe4d57d01dd9}
+Update the unknowns with the already computed net-\/updates
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Time step size \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{WavePropagation_8h}{Wave\-Propagation.\-h}\item 
+src/\hyperlink{WavePropagation_8cpp}{Wave\-Propagation.\-cpp}\end{DoxyCompactItemize}

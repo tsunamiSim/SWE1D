@@ -1,0 +1,114 @@
+\hypertarget{classscenarios_1_1scenarioBase}{\section{scenarios\-:\-:scenario\-Base Class Reference}
+\label{classscenarios_1_1scenarioBase}\index{scenarios\-::scenario\-Base@{scenarios\-::scenario\-Base}}
+}
+Inheritance diagram for scenarios\-:\-:scenario\-Base\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classscenarios_1_1scenarioBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classscenarios_1_1scenarioBase_adb8ed429de97c9d478460906e9d66801}{scenario\-Base} (unsigned int size)
+\item 
+virtual unsigned int \hyperlink{classscenarios_1_1scenarioBase_ab4b832324300d6921467af8f71b646c2}{get\-Height} (unsigned int pos)
+\item 
+virtual T \hyperlink{classscenarios_1_1scenarioBase_a21147d04c54908772ea2d060de49327f}{get\-Momentum} (unsigned int pos)
+\item 
+virtual T \hyperlink{classscenarios_1_1scenarioBase_a76f3d6f7004dda1344e62bb095d7daca}{get\-Cell\-Size} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned int \hyperlink{classscenarios_1_1scenarioBase_a67c277c3749ab83d0cb1749200a38791}{m\-\_\-size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classscenarios_1_1scenarioBase_adb8ed429de97c9d478460906e9d66801}{\index{scenarios\-::scenario\-Base@{scenarios\-::scenario\-Base}!scenario\-Base@{scenario\-Base}}
+\index{scenario\-Base@{scenario\-Base}!scenarios::scenarioBase@{scenarios\-::scenario\-Base}}
+\subsubsection[{scenario\-Base}]{\setlength{\rightskip}{0pt plus 5cm}scenarios\-::scenario\-Base\-::scenario\-Base (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classscenarios_1_1scenarioBase_adb8ed429de97c9d478460906e9d66801}
+Constructor for the scenario
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The amount of cells which are simulated \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classscenarios_1_1scenarioBase_a76f3d6f7004dda1344e62bb095d7daca}{\index{scenarios\-::scenario\-Base@{scenarios\-::scenario\-Base}!get\-Cell\-Size@{get\-Cell\-Size}}
+\index{get\-Cell\-Size@{get\-Cell\-Size}!scenarios::scenarioBase@{scenarios\-::scenario\-Base}}
+\subsubsection[{get\-Cell\-Size}]{\setlength{\rightskip}{0pt plus 5cm}virtual T scenarios\-::scenario\-Base\-::get\-Cell\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classscenarios_1_1scenarioBase_a76f3d6f7004dda1344e62bb095d7daca}
+Returns the width of each cell
+
+\begin{DoxyReturn}{Returns}
+Width of one cell 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classscenarios_1_1DamBreak_a4ca1a408aa07a2c3ac0a5613f9d06b7d}{scenarios\-::\-Dam\-Break}.
+
+\hypertarget{classscenarios_1_1scenarioBase_ab4b832324300d6921467af8f71b646c2}{\index{scenarios\-::scenario\-Base@{scenarios\-::scenario\-Base}!get\-Height@{get\-Height}}
+\index{get\-Height@{get\-Height}!scenarios::scenarioBase@{scenarios\-::scenario\-Base}}
+\subsubsection[{get\-Height}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int scenarios\-::scenario\-Base\-::get\-Height (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classscenarios_1_1scenarioBase_ab4b832324300d6921467af8f71b646c2}
+Returns the initial height at a given cell
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The index of the cell\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The height of the specified cell 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classscenarios_1_1DamBreak_a16c6bc54260b58f539677c4500130223}{scenarios\-::\-Dam\-Break}, \hyperlink{classscenarios_1_1Shock_a6041f87441e9e04e6f7a9c2fdab12edb}{scenarios\-::\-Shock}, and \hyperlink{classscenarios_1_1Rare_ae73e80c93421dff083099eb85234de44}{scenarios\-::\-Rare}.
+
+\hypertarget{classscenarios_1_1scenarioBase_a21147d04c54908772ea2d060de49327f}{\index{scenarios\-::scenario\-Base@{scenarios\-::scenario\-Base}!get\-Momentum@{get\-Momentum}}
+\index{get\-Momentum@{get\-Momentum}!scenarios::scenarioBase@{scenarios\-::scenario\-Base}}
+\subsubsection[{get\-Momentum}]{\setlength{\rightskip}{0pt plus 5cm}virtual T scenarios\-::scenario\-Base\-::get\-Momentum (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classscenarios_1_1scenarioBase_a21147d04c54908772ea2d060de49327f}
+Returns the initial momentum at a given cell
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The index of the cell\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The momentum at the specified cell 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classscenarios_1_1DamBreak_a15d0ac494904dfb9059f0b8685e49e0f}{scenarios\-::\-Dam\-Break}, \hyperlink{classscenarios_1_1Shock_a89b88a5223ae0f82178ac63c724a6d91}{scenarios\-::\-Shock}, and \hyperlink{classscenarios_1_1Rare_a33b6c2b5a5d81d7e1a1f5b0c0028ac2d}{scenarios\-::\-Rare}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classscenarios_1_1scenarioBase_a67c277c3749ab83d0cb1749200a38791}{\index{scenarios\-::scenario\-Base@{scenarios\-::scenario\-Base}!m\-\_\-size@{m\-\_\-size}}
+\index{m\-\_\-size@{m\-\_\-size}!scenarios::scenarioBase@{scenarios\-::scenario\-Base}}
+\subsubsection[{m\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int scenarios\-::scenario\-Base\-::m\-\_\-size\hspace{0.3cm}{\ttfamily [protected]}}}\label{classscenarios_1_1scenarioBase_a67c277c3749ab83d0cb1749200a38791}
+Number of cells 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/scenarios/scenario.\-h\end{DoxyCompactItemize}
