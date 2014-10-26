@@ -70,7 +70,10 @@ public:
 			return 14;
 		return 3.5;
 	}
-
+	
+	/**
+	 * @return Initial Momentum
+	 */
 	T getMomentum(unsigned int pos)
 	{
 		if(pos <= damPos)
