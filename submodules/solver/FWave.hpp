@@ -88,15 +88,13 @@ public:
 	_delta_flux();
 	_eigenval();
 	_eigencoeff();
-<<<<<<< HEAD
-=======
+
 	if(lambda_roe1 <= 0 && lambda_roe2 >= 0)
 		{
 		o_hu_l = (lambda_roe1 * eigen_coeff1);
 		o_hu_r = (lambda_roe2 * eigen_coeff2);
 		o_h_l = (eigen_coeff1);
 		o_h_r = (eigen_coeff2);
->>>>>>> 2c31a614a815dfa65af86fd5b0ea7a4488adb47b
 		}
 	else if(lambda_roe1 >= 0 && lambda_roe2 <= 0)
 		{
@@ -107,13 +105,10 @@ public:
 		}
 	else if(lambda_roe1 >= 0 && lambda_roe2 >= 0)
 		{
-<<<<<<< HEAD		
-=======
 		o_hu_l = 0.0;
 		o_hu_r = lambda_roe1 * eigen_coeff1 + lambda_roe2 * eigen_coeff2;
 		o_h_r = eigen_coeff1 + eigen_coeff2;
 		o_h_l = 0.0;
->>>>>>> 2c31a614a815dfa65af86fd5b0ea7a4488adb47b
 		}
 	else if(lambda_roe1 <= 0 && lambda_roe2 <= 0)
 		{
@@ -122,12 +117,10 @@ public:
 		o_h_l = eigen_coeff1 + eigen_coeff2;
 		o_h_r = 0.0;
 		}
-<<<<<<< HEAD
 	else{assert(0);}
 
 	//cout << o_h_l << o_hu_l << "  " << o_h_r << o_hu_l << '\n';
 	o_max_ws = max(abs(o_h_l), abs(o_h_r));
->>>>>>> 2c31a614a815dfa65af86fd5b0ea7a4488adb47b
 	}
 
 };

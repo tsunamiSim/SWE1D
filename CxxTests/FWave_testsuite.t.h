@@ -40,9 +40,13 @@ public:
 		{
 		for(unsigned int j = 1; i < testrange; i++)
 			{	
-			m_solver->computeNetUpdates(i, j, (j/i), (sqrt(i) * j/i), 0.0f, 0.0f, hu_l, hu_r, h_l, h_r, speed);
-			std::cout << hu_l << hu_r;
-			TS_ASSERT(hu_l == 0 || hu_r == 0);
+				for(unsigned int j = 1; k < testrange; i++)
+				{	
+				m_solver->computeNetUpdates(i, i, j, k, 0.0f, 0.0f, hu_l, hu_r, h_l, h_r, speed);
+			
+				TS_ASSERT((!hu_l && !h_l) || (hu_r && h_r));
+				}	
+			
 			}	
 		}
 	}
