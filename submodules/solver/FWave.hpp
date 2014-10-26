@@ -21,14 +21,14 @@ private:
 
 
 
-	//flux-function
+	// computes the flux-function --> results in delta_f(1/2)
 	void _delta_flux()
 	{
 	delta_f1 = hu_r - hu_l;
 	delta_f2 = (hu_r * hu_r / h_r + h_r * h_r * gravity * 0.5) - (hu_l * hu_l / h_r + h_l * h_l * gravity * 0.5);
 	}
 
-	//(3)
+	// computes the roe eigenvalues --> results in lamda_roe(1/2)
 	void _eigenval()
 	{
 	T u_roe, u_l, u_r, sqrt_hg;
@@ -40,7 +40,7 @@ private:
 	lamda_roe2 = u_roe + sqrt_hg;
 	}
 
-	//(8)
+	// computes the roe eigencoeffizients --> results in eigen_coeff(1/2)
 	void _eigencoeff()
 	{
 	lamda_inv = 1.0 / (lamda_roe2 - lamda_roe1);
@@ -56,6 +56,7 @@ public:
 	{
 	gravity = 9.81;
 	}
+
 
 	/**
 	*	Computes the next timesteps net updates
@@ -77,12 +78,9 @@ public:
 			T& o_lamda_l, T& o_lamda_r, T& o_Q_l, T& o_Q_r, T& o_max_ws)
 	{
 	
-	// cout << i_h_l << i_h_r << i_hu_l << i_hu_r << i_b_l << i_b_r << endl;	
-	
-	// assert that height is not zero since when calculating the particle speed there is a division through it
-	assert(i_h_l != 0);
-	assert(i_h_r != 0);
-	
+	// assert that height is not zero since when calculating the particle speed there is a division through it; height cant be negative
+	assert(i_h_l > 0);
+	assert(i_h_r > 0);
 	h_l = i_h_l;
 	h_r = i_h_r;
 	hu_l = i_hu_l;
@@ -90,12 +88,13 @@ public:
 	_delta_flux();
 	_eigenval();
 	_eigencoeff();
+
 	if(lamda_roe1 <= 0 && lamda_roe2 >= 0)
 		{
-		o_Q_l = (lamda_roe1 * eigen_coeff1);
-		o_Q_r = (lamda_roe2 * eigen_coeff2);
-		o_lamda_l = (eigen_coeff1);
-		o_lamda_r = (eigen_coeff2);
+		o_Q_l = lamda_roe1 * eigen_coeff1;
+		o_Q_r = lamda_roe2 * eigen_coeff2;
+		o_lamda_l = eigen_coeff1;
+		o_lamda_r = eigen_coeff2;
 		}
 	else if(lamda_roe1 >= 0 && lamda_roe2 <= 0)
 		{
@@ -109,7 +108,7 @@ public:
 		o_Q_l = 0.0;
 		o_Q_r = lamda_roe1 * eigen_coeff1 + lamda_roe2 * eigen_coeff2;
 		o_lamda_r = eigen_coeff1 + eigen_coeff2;
-		o_lamda_l = 0.0;
+		o_lamda_l = 0.0;		
 		}
 	else if(lamda_roe1 <= 0 && lamda_roe2 <= 0)
 		{
@@ -118,8 +117,12 @@ public:
 		o_lamda_l = eigen_coeff1 + eigen_coeff2;
 		o_lamda_r = 0.0;
 		}
-	//cout << o_lamda_l << o_Q_l << "  " << o_lamda_r << o_Q_l << '\n';
+	else{assert(0);}
+
+
 	o_max_ws = max(abs(o_lamda_l), abs(o_lamda_r));
+	
+	//cout << o_lamda_l << o_lamda_r;
 	}
 
 };

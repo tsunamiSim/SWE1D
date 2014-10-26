@@ -3,10 +3,50 @@
 
 class FWaveTest : public CxxTest::TestSuite
 {
+private:
+	float h_l;
+	float hu_l;
+	float h_r;
+	float hu_r; 
+	float speed;	
+	unsigned int testrange;	
+	solver::FWave<float> *m_solver;
+
 public:
-	void test_output(void)
+	void test_steady_states(void)
 	{
-	TS_ASSERT(1);
+	testrange = 100;
+	m_solver = new solver::FWave<float>();
+
+	for(unsigned int i = 1; i < testrange; i++)
+		{
+		for(unsigned int j = 0; i < testrange; i++)
+			{	
+			m_solver->computeNetUpdates(i, i, j, j, 0.0f, 0.0f, hu_l, hu_r, h_l, h_r, speed);
+			TS_ASSERT_EQUALS(hu_l,hu_r);
+			TS_ASSERT_EQUALS(h_l,h_r);
+			TS_ASSERT(!h_l);
+			TS_ASSERT(!h_r);
+			TS_ASSERT(!hu_l);
+			TS_ASSERT(!hu_r);
+			}	
+		}
 	}
+
+	void test_both_lamda_pos_neg(void)
+	{	
+	m_solver = new solver::FWave<float>();
+	for(unsigned int i = 1; i < testrange; i++)
+		{
+		for(unsigned int j = 1; i < testrange; i++)
+			{	
+			m_solver->computeNetUpdates(i, j, (j/i), (sqrt(i) * j/i), 0.0f, 0.0f, hu_l, hu_r, h_l, h_r, speed);
+			std::cout << hu_l << hu_r;
+			TS_ASSERT(hu_l == 0 || hu_r == 0);
+			}	
+		}
+	}
+
+
 
 };
