@@ -31,7 +31,7 @@ public:
 	*
 	* @return The height of the specified cell
 	*/
-	unsigned int getHeight(unsigned int pos)
+	T getHeight(unsigned int pos)
 	{
 		if (pos <= left)
 			return 10;

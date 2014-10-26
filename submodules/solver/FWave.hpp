@@ -79,6 +79,8 @@ public:
 	// assert that height is not zero since when calculating the particle speed there is a division through it; height cant be negative
 	assert(i_h_l > 0);
 	assert(i_h_r > 0);
+	
+	// compute the FWave-solution 
 	h_l = i_h_l;
 	h_r = i_h_r;
 	hu_l = i_hu_l;
@@ -87,6 +89,7 @@ public:
 	_eigenval();
 	_eigencoeff();
 
+	// set the output for both waves
 	if(lambda_roe1 <= 0 && lambda_roe2 >= 0)
 		{
 		o_hu_l = (lambda_roe1 * eigen_coeff1);
@@ -117,6 +120,7 @@ public:
 		}
 	else{assert(0);}
 
+	// set the maximum wavespeed
 	o_max_ws = max(abs(o_h_l), abs(o_h_r));
 	}
 

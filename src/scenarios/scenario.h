@@ -29,7 +29,7 @@ public:
 	*
 	* @return The height of the specified cell
 	*/
-	virtual unsigned int getHeight(unsigned int pos)
+	virtual T getHeight(unsigned int pos)
 	{	
 		return 15;
 	}

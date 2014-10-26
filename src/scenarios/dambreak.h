@@ -57,15 +57,14 @@ public:
 	*/
 	DamBreak(unsigned int size)
 		: scenarioBase(size),
-		  damPos(m_size * 4000/30000),
-		  villagePos(m_size * 29000/30000)
+		  damPos(m_size * 4000/30000)
 	{
 	}
 
 	/**
 	 * @return Initial water height at pos
 	 */
-	unsigned int getHeight(unsigned int pos)
+	T getHeight(unsigned int pos)
 	{
 		if (pos <= damPos)
 			return 14;
@@ -85,14 +84,6 @@ public:
 	T getCellSize()
 	{
 		return 30000.f / m_size;
-	}
-
-	/**
-	 * @return Cellposition of simulated village 
-	 */
-	unsigned int village()
-	{
-		return villagePos;
 	}
 
 };
