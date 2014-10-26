@@ -108,8 +108,8 @@ public:
 			case 'z':
 				ss.clear();
 				ss.str(optarg);
-				ss >> m_timeSteps;
-				std::cout << m_timeSteps << std::endl;
+				ss >> m_scenario;
+				std::cout << m_scenario << std::endl;
 				break;
 			case '?':
 				printHelpMessage(std::cerr);
@@ -150,7 +150,7 @@ private:
 			<< "  -s, --size=SIZE              domain size" << std::endl
 			<< "  -t, --time=TIME              number of simulated time steps" << std::endl
 			<< "  -h, --help                   this help message" << std::endl
-			<< "  -z, --scenario=INDEX         index of simulated scenario [0: DamBreak (set by default), 1: Shock, 2: RareRare, 3: DamBreak with activated stop-function at villagecollission]" 				<< std::endl;
+			<< "  --scenario=INDEX         index of simulated scenario [0: DamBreak (set by default), 1: Shock, 2: RareRare, 3: DamBreak 					with activated stop-function at villagecollission]" 				<< std::endl;
 	}
 };
 

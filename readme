@@ -1,0 +1,10 @@
+Run 'scons' to compile the programm!
+
+Run SWE1D from here.
+Use -h/? to print options.
+
+VTK Data is written to 'results'.
+Dokumentation(PDF / HTML) is located at 'doc'.
+
+
+
