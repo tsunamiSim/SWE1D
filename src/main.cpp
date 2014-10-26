@@ -98,6 +98,12 @@ int main(int argc, char** argv)
 		// Write new values
 		writer.write(t, h, hu, args.size());
 		
+		
+		if(h[args.scenario()->village()] != args.scenario()->getHeight(args.scenario()->village()))
+		{					
+			std::cout << "Collission!! Village at " << args.scenario()->village() << "  " << "waterheight:" << h[args.scenario()->village()] << "  " << std::endl;
+			i = args.timeSteps();
+		}
 	}
 	
 

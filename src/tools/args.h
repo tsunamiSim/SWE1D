@@ -78,7 +78,7 @@ public:
 			{0, 0, 0, 0}
 		};
 
-		int c, optionIndex;
+		int c, optionIndex, tmp;
 		std::istringstream ss;
 		while ((c = getopt_long(argc, argv, "s:t:h:z",
 			longOptions, &optionIndex)) >= 0) {
@@ -99,11 +99,11 @@ public:
 				std::cout << m_timeSteps << std::endl;
 				break;
 			case 'z':
-				ss.clear();
+				ss.clear();				
 				ss.str(optarg);
-				unsigned int tmp;
 				ss >> tmp;
 				setScenario(tmp);
+				std::cout << m_scenario << std::endl;
 				break;
 			case 'h':
 				printHelpMessage();
@@ -179,7 +179,6 @@ private:
 			m_scenario = new scenarios::DamBreak(m_size);
 			break;
 	 	}
-		std::cout << "setScenario" << std::endl;
 	}
 
 };

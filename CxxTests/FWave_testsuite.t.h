@@ -34,13 +34,15 @@ public:
 	}
 
 	void test_both_lamda_pos_neg(void)
-	{	
+	{		
+	testrange = 100;
 	m_solver = new solver::FWave<float>();
+
 	for(unsigned int i = 1; i < testrange; i++)
 		{
 		for(unsigned int j = 1; i < testrange; i++)
 			{	
-				for(unsigned int j = 1; k < testrange; i++)
+				for(unsigned int k = 1; k < testrange; i++)
 				{	
 				m_solver->computeNetUpdates(i, i, j, k, 0.0f, 0.0f, hu_l, hu_r, h_l, h_r, speed);
 			

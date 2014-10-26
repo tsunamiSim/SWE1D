@@ -19,8 +19,6 @@ private:
 	delta_f1, delta_f2,
 	h_l, hu_l, h_r, hu_r, gravity, lambda_inv;
 
-
-
 	// computes the flux-function --> results in delta_f(1/2)
 	void _delta_flux()
 	{
@@ -119,7 +117,6 @@ public:
 		}
 	else{assert(0);}
 
-	//cout << o_h_l << o_hu_l << "  " << o_h_r << o_hu_l << '\n';
 	o_max_ws = max(abs(o_h_l), abs(o_h_r));
 	}
 

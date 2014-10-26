@@ -46,6 +46,8 @@ namespace scenarios
 class DamBreak : public scenarioBase
 {
 private:
+	unsigned int damPos;
+	unsigned int villagePos;
 
 public:
 	/**
@@ -54,7 +56,9 @@ public:
 	* @param size The amount of cells which are simulated
 	*/
 	DamBreak(unsigned int size)
-		: scenarioBase(size)
+		: scenarioBase(size),
+		  damPos(m_size * 4000/30000),
+		  villagePos(m_size * 29000/30000)
 	{
 	}
 
@@ -63,14 +67,14 @@ public:
 	 */
 	unsigned int getHeight(unsigned int pos)
 	{
-		if (pos <= m_size/5)
+		if (pos <= damPos)
 			return 14;
 		return 3.5;
 	}
 
 	T getMomentum(unsigned int pos)
 	{
-		if(pos <= m_size/5)
+		if(pos <= damPos)
 			return 0;
 		return 0.7;
 	}
@@ -80,8 +84,17 @@ public:
 	 */
 	T getCellSize()
 	{
-		return 1000.f / m_size;
+		return 30000.f / m_size;
 	}
+
+	/**
+	 * @return Cellposition of simulated village 
+	 */
+	unsigned int village()
+	{
+		return villagePos;
+	}
+
 };
 
 }
