@@ -17,13 +17,20 @@ private:
 	update_r, update_l,
 	lambda_roe1, lambda_roe2, 
 	delta_f1, delta_f2,
-	h_l, hu_l, h_r, hu_r, gravity, lambda_inv;
+	h_l, hu_l, h_r, hu_r, gravity, lambda_inv,
+	b_l, b_r;
 
 	// computes the flux-function --> results in delta_f(1/2)
 	void _delta_flux()
 	{
 	delta_f1 = hu_r - hu_l;
 	delta_f2 = (hu_r * hu_r / h_r + h_r * h_r * gravity * 0.5) - (hu_l * hu_l / h_r + h_l * h_l * gravity * 0.5);
+	}
+
+	// 
+	void _bathymetry()
+	{
+	delta_f2 += gravity * (b_r - b_l) * (h_l + h_r) * 0.5; 
 	}
 
 	// computes the roe eigenvalues --> results in lamda_roe(1/2)
@@ -76,16 +83,30 @@ public:
 			T& o_h_l, T& o_h_r, T& o_hu_l, T& o_hu_r, T& o_max_ws)
 	{
 	
-	// assert that height is not zero since when calculating the particle speed there is a division through it; height cant be negative
-	assert(i_h_l > 0);
-	assert(i_h_r > 0);
-	
-	// compute the FWave-solution 
+	assert(i_h_l > 0 || i_h_r > 0);
+
 	h_l = i_h_l;
 	h_r = i_h_r;
 	hu_l = i_hu_l;
 	hu_r = i_hu_r;
+	b_l = i_b_l;
+	b_r = i_b_r;
+
+	if(h_l == 0) 
+	{
+		h_l = h_r;
+		hu_l = -hu_r;
+		b_l = b_r;
+	}else if(h_r == 0) 
+	{
+		h_r = h_l;
+		hu_r = -hu_l;
+		b_r = b_l;
+	}
+	
+	// compute the FWave-solution 
 	_delta_flux();
+	_bathymetry();
 	_eigenval();
 	_eigencoeff();
 

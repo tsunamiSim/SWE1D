@@ -53,6 +53,8 @@ int main(int argc, char** argv)
 	T *h = new T[args.size()+2];
 	// Momentum
 	T *hu = new T[args.size()+2];
+	// Bathymetry
+	T *b = new T[args.size()+2];
 	// Scenario	
 	scenarios::scenarioBase* scenario;
 
@@ -75,6 +77,8 @@ int main(int argc, char** argv)
 		h[i] = scenario->getHeight(i);
 		
 		hu[i] = scenario->getMomentum(i);
+
+		b[i] = scenario-> getBathymetry(i);
 		}
 
 	// Create a writer that is responsible printing out values	
@@ -83,7 +87,7 @@ int main(int argc, char** argv)
 	writer::VtkWriter writer("results/swe1d", scenario->getCellSize());
 
 	// Helper class computing the wave propagation
-	WavePropagation wavePropagation(h, hu, args.size(), scenario->getCellSize());
+	WavePropagation wavePropagation(h, hu, b, args.size(), scenario->getCellSize());
 
 	// Write initial data
 	tools::Logger::logger.info("Initial data");
@@ -94,7 +98,7 @@ int main(int argc, char** argv)
 	// Collission-time for DamBreak simulation
 	T collission_time = 0;
 
-	writer.write(t, h, hu, args.size());
+	writer.write(t, h, hu, b, args.size());
 
 	for (unsigned int i = 0; i < args.timeSteps(); i++) {
 		// Do one time step
@@ -114,7 +118,7 @@ int main(int argc, char** argv)
 		t += maxTimeStep;
 
 		// Write new values
-		writer.write(t, h, hu, args.size());
+		writer.write(t, h, hu, b, args.size());
 		
 		// Save collission-time and stop Simulation if index of scenario is 3
 		if((args.scenario() == 3 || args.scenario() == 0 ) 

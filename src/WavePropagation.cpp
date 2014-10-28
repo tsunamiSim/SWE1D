@@ -47,7 +47,7 @@ T WavePropagation::computeNumericalFluxes()
 		// Compute net updates
 		m_solver.computeNetUpdates( m_h[i-1], m_h[i],
 				m_hu[i-1], m_hu[i],
-				0.f, 0.f,	// Bathymetry
+				m_b[i-1], m_b[i],	// Bathymetry
 				m_hNetUpdatesLeft[i-1], m_hNetUpdatesRight[i-1],
 				m_huNetUpdatesLeft[i-1], m_huNetUpdatesRight[i-1],
 				maxEdgeSpeed );
@@ -74,6 +74,6 @@ void WavePropagation::updateUnknowns(T dt)
 
 void WavePropagation::setOutflowBoundaryConditions()
 {
-	m_h[0] = m_h[1]; m_h[m_size+1] = m_h[m_size];
-	m_hu[0] = m_hu[1]; m_hu[m_size+1] = m_hu[m_size];
+	m_h[0] = 0; m_h[m_size+1] = 0;
+	m_hu[0] = 0; m_hu[m_size+1] = 0;
 }

@@ -45,6 +45,20 @@ public:
 	{
 		return 0;
 	}
+
+	/**
+	* Returns the bathymetry at a given cell
+	*	
+	* @param pos The index of the cell
+	*
+	* @return The bathymetry at the specified cell
+	*/
+	virtual T getBathymetry(unsigned int pos)
+	{
+		if(pos == 0 || pos == (m_size + 1))
+			return 100;
+		return 1;
+	}
 	
 	/**
 	* Returns the width of each cell

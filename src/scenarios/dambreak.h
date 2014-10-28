@@ -70,7 +70,7 @@ public:
 	{
 		if (pos <= damPos)
 			return 14;
-		return 3.5;
+		return 3.5 - getBathymetry(pos);
 	}
 	
 	/**
@@ -83,6 +83,20 @@ public:
 		if(pos <= damPos)
 			return 0;
 		return 0.7;
+	}
+
+	/**
+	 * @param pos The index of the cell
+	 * 
+	 * @return Bathymetry
+	 */
+	T getBathymetry(unsigned int pos)
+	{
+		if(pos == 0 || pos == (m_size + 1))
+			return 100;
+		if(pos < m_size/2)
+			return -5;
+		return -2;
 	}
 
 	/**
