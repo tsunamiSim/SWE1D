@@ -47,6 +47,9 @@
 #include "./../scenarios/dambreak.h"
 #include "./../scenarios/schock.h"
 #include "./../scenarios/rare.h"
+#include "./../scenarios/bathymetryEffect.h"
+#include "./../scenarios/subcriticalFlow.h"
+#include "./../scenarios/supercriticalFlow.h"
 
 namespace tools
 {
@@ -83,7 +86,7 @@ public:
 
 		int c, optionIndex;
 		std::istringstream ss;
-		while ((c = getopt_long(argc, argv, "s:t:h:z",
+		while ((c = getopt_long(argc, argv, "s:t:h:z:",
 			longOptions, &optionIndex)) >= 0) {
 			switch (c) {
 			case 0:
@@ -150,7 +153,7 @@ private:
 			<< "  -s, --size=SIZE              domain size" << std::endl
 			<< "  -t, --time=TIME              number of simulated time steps" << std::endl
 			<< "  -h, --help                   this help message" << std::endl
-			<< "  --scenario=INDEX         index of simulated scenario [0: DamBreak (set by default), 1: Shock, 2: RareRare, 3: DamBreak 					with activated stop-function at villagecollission]" 				<< std::endl;
+			<< "  -z, --scenario=INDEX         index of simulated scenario [0: DamBreak (set by default), 1: Shock, 2: RareRare, 3: 				DamBreak with activated stop-function at villagecollission, 4: BathymetryEffect, 5: SubcriticalFlow (only use with size 25), 6: SupercriticalFLow (only use with size 25)]" 				<< std::endl;
 	}
 };
 

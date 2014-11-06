@@ -72,8 +72,15 @@ void WavePropagation::updateUnknowns(T dt)
 	}
 }
 
-void WavePropagation::setOutflowBoundaryConditions()
+void WavePropagation::setOutflowBoundaryConditions(unsigned int reflective)
 {
-	m_h[0] = 0; m_h[m_size+1] = 0;
-	m_hu[0] = 0; m_hu[m_size+1] = 0;
+	if(reflective)
+	{	
+		m_h[0] = 0; m_h[m_size+1] = 0;
+		m_hu[0] = 0; m_hu[m_size+1] = 0;
+	}else
+	{
+		m_h[0] = m_h[1]; m_h[m_size+1] = m_h[m_size];
+		m_hu[0] = m_hu[1]; m_hu[m_size+1] = m_hu[m_size];
+	}
 }

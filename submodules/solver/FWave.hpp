@@ -27,7 +27,7 @@ private:
 	delta_f2 = (hu_r * hu_r / h_r + h_r * h_r * gravity * 0.5) - (hu_l * hu_l / h_r + h_l * h_l * gravity * 0.5);
 	}
 
-	// 
+	// computes the effect of the bathymetry
 	void _bathymetry()
 	{
 	delta_f2 += gravity * (b_r - b_l) * (h_l + h_r) * 0.5; 
@@ -92,6 +92,7 @@ public:
 	b_l = i_b_l;
 	b_r = i_b_r;
 
+	// reflective boundaries at dry-wet-states
 	if(h_l == 0) 
 	{
 		h_l = h_r;
@@ -103,7 +104,8 @@ public:
 		hu_r = -hu_l;
 		b_r = b_l;
 	}
-	
+	assert(h_l != 0 && h_r != 0);
+
 	// compute the FWave-solution 
 	_delta_flux();
 	_bathymetry();

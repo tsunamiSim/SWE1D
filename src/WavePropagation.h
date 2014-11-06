@@ -140,10 +140,10 @@ public:
 	void updateUnknowns(T dt);
 
 	/**
-	 * Updates h and hu according to the outflow condition to both
+	 * Updates h and hu according to the set boundary condition to both
 	 * boundaries
 	 */
-	void setOutflowBoundaryConditions();
+	void setOutflowBoundaryConditions(unsigned int reflective);
 };
 
 

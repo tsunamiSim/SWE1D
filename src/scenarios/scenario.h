@@ -55,9 +55,7 @@ public:
 	*/
 	virtual T getBathymetry(unsigned int pos)
 	{
-		if(pos == 0 || pos == (m_size + 1))
-			return 100;
-		return 1;
+		return -2;
 	}
 	
 	/**
@@ -68,6 +66,16 @@ public:
 	virtual T getCellSize()
 	{
 		return 1000.f / m_size;
+	}
+
+	/**
+	* Returns type of the boundary conditions
+	*
+	* @return Reflective boundary conditions
+	*/
+	virtual unsigned int hasReflectiveBoundaries()
+	{
+		return 1;
 	}
 	
 };

@@ -66,6 +66,15 @@ int main(int argc, char** argv)
 	case 2:
 		scenario = new scenarios::Rare(args.size());
 		break;
+	case 4:
+		scenario = new scenarios::BathymetryEffect(args.size());
+		break;
+	case 5:
+		scenario = new scenarios::SubcriticalFlow(args.size());
+		break;
+	case 6:
+		scenario = new scenarios::SupercriticalFlow(args.size());
+		break;
 	default:		
 		scenario = new scenarios::DamBreak(args.size());
 		break;
@@ -78,7 +87,7 @@ int main(int argc, char** argv)
 		
 		hu[i] = scenario->getMomentum(i);
 
-		b[i] = scenario-> getBathymetry(i);
+		b[i] = scenario->getBathymetry(i);
 		}
 
 	// Create a writer that is responsible printing out values	
@@ -99,6 +108,19 @@ int main(int argc, char** argv)
 	T collission_time = 0;
 
 	writer.write(t, h, hu, b, args.size());
+	
+	T F = 0;
+	unsigned int pos = 0;
+	// compute the location and value of the maximum Froude number
+	for (unsigned int i = 0; i < args.size(); i++) {
+		T tmp = (hu[i] / h[i]) / sqrt(9.81*h[i]);
+		if(tmp > F)
+		{
+			F = tmp;
+			pos = i;
+		}
+	}
+	tools::Logger::logger << "max froude number: " << F << " at pos: " << pos << std::endl; 	
 
 	for (unsigned int i = 0; i < args.timeSteps(); i++) {
 		// Do one time step
@@ -106,7 +128,7 @@ int main(int argc, char** argv)
 				<< " at time " << t << std::endl;
 
 		// Update boundaries
-		wavePropagation.setOutflowBoundaryConditions();
+		wavePropagation.setOutflowBoundaryConditions(scenario->hasReflectiveBoundaries());
 
 		// Compute numerical flux on each edge
 		T maxTimeStep = wavePropagation.computeNumericalFluxes();
