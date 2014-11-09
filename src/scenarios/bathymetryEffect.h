@@ -64,9 +64,9 @@ public:
 	 */
 	T getHeight(unsigned int pos)
 	{
-		if (pos <= (m_size*4/10) || pos >= (m_size*6/10) )
-			return 5 - getBathymetry(pos);
-		return 10 - getBathymetry(pos);
+		if (pos <= (m_size*9/20) || pos >= (m_size*11/20) )
+			return -getBathymetry(pos);
+		return 5-getBathymetry(pos);
 	}
 	
 	/**
@@ -86,13 +86,7 @@ public:
 	*/
 	T getBathymetry(unsigned int pos)
 	{
-		if(pos == 0)
-			return getBathymetry(1);
-		if(pos == (m_size + 1))
-			return getBathymetry(m_size);
-		if(pos <= (m_size / 2))	
-			return ((-1*(-1 - (20.f - 20.f * pos / (m_size *0.5) )))-21);
-		return ((-1*(-1 - (10.f - 10.f * (m_size-pos) / (m_size * 0.5))))-21);
+		return ( pos * getCellSize() < 300 && pos * getCellSize() > 200 ) ? -5.f: -10.f;
 	}
 
 	/**
