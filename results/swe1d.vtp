@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1">
+<Collection>
+<DataSet timestep="00" group="" part="0" file="results/swe1d_0.vtr"/> 
+<DataSet timestep="1.69826e+090" group="" part="0" file="results/swe1d_1.vtr"/> 

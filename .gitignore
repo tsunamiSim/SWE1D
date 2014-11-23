@@ -20,9 +20,6 @@ site_scons/site_tools/cxxtest.pyc
 # built files
 *~
 
-# vtr or vtp files
-results/*.vtr
-results/*.vtp
 
 
 
