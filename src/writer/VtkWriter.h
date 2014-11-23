@@ -149,7 +149,7 @@ public:
 		// water surface height
 		vtkFile << "<DataArray Name=\"h\" type=\"Float32\" format=\"ascii\">" << std::endl;
 		for (int i=1; i < size+1; i++)
-				vtkFile << h[i] + b[i] << std::endl;
+				vtkFile << h[i] << std::endl;
 		vtkFile << "</DataArray>" << std::endl;
 
 		// momentum

@@ -144,7 +144,7 @@ public:
 	else{assert(0);}
 
 	// set the maximum wavespeed
-	o_max_ws = max(abs(o_h_l), abs(o_h_r));
+	o_max_ws = max(abs(lambda_roe1), abs(lambda_roe2));
 	}
 
 };
